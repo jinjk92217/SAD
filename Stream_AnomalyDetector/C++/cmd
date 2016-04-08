@@ -1,0 +1,16 @@
+g++ -Wall file.cpp -o file
+./file
+http://www.oschina.net/question/234345_48628
+    #include <stdio.h>  
+    extern "C" {  
+            void display() {  
+                    printf("This is Display Function\n");   
+            }  
+    }  
+    g++ test.cpp -fPIC -shared -o libtest.so  
+
+
+
+    import ctypes  
+    so = ctypes.CDLL("./libtest.so")  
+    so.display()  
