@@ -1,3 +1,8 @@
+"""
+:copyright: (c) 2016 Jiakun Jin
+email: jiakun@kth.se
+:license: LGPL?
+"""
 import time
 import numpy as np
 import random
@@ -9,23 +14,20 @@ import Config_StreamDetector
 import multiprocessing
 import psutil
 
-Error_rate = 0.1   #error rate happened
-Mean_number = 200  # the mean number of errors happened when a error happens
+__author__ = 'jiakun'
+
+Plot_ylim =20              #ylim of the plot
 Train_incremental = False      # whether train the data incrementally
+Error_rate = 0.1            #error rate happened
+Mean_number = 200           #the mean number of cases happened during one shift
+Shift_times = 1000          #the total time of changes between normal and anomaly cases
 
 
-Total_error = 0      # count the number of error happened in the program
-Detected_error = 0   # count the number of detected errors from detectors
-MisDetect_error = 0  # count the number of misdetected errors from detectors
-Total_number = 0     # Total number of cases
 Plot_Window_Size = 2000    # the plot window size
 Series_array = [0] * Plot_Window_Size
 Score_array = [0] * Plot_Window_Size
 Detected_array = [0] * Plot_Window_Size
-Plot_ylim =20
 
-Shift_times = 1000   # the total time of changes between normal and anomaly cases
-stream_array = []
 np.random.seed(10)
 random.seed(10)
 
@@ -64,20 +66,26 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 # )
 
 
-# Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
-#     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
-#     threshold = 3.0
-# )
-
-Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
-    #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
-    drift = 1.0,
-    threshold = 12.0
+Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
+    #filename = "./Stream_AnomalyDetector/C++/DDM.so",
+    threshold = 3.0
 )
+
+# Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
+#     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
+#     drift = 1.0,
+#     threshold = 12.0
+# )
 
 
 
 def write_to_file(Info,size=Plot_Window_Size):
+    '''
+    Write the Info to datafile.data inorder to show the plot in the other process
+
+    :param Info:Points need to be plotted, size: the number of points to be plotted in one time
+    :return:
+    '''
     datafile_path = "datafile.txt"
     datafile_id = open(datafile_path, 'w+')
     #here you open the ascii file
@@ -101,12 +109,23 @@ def write_to_file(Info,size=Plot_Window_Size):
 
 
 
-
-#if __name__ != '__main__' or 1==1:
-#if __name__ == '__main__':
-def test_process():
-    global Error_rate,Mean_number,Train_incremental,Total_error,Detected_error,MisDetect_error,Total_number,Plot_Window_Size,Series_array,Score_array,Detected_array
-    global Shift_times,stream_array,Gen,train_data,anomaly_detector,Stream_Detector
+def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times = Shift_times, Train_incremental =Train_incremental):
+    '''
+    This is for data from the simluation and data_set process
+    The process will last for Shift_times
+    During one shift time, there will be around Mean_number of cases
+    There will be around Error_rate percentage error occurs
+    :param Error_rate:error rate happened, Mean_number: the mean number of cases happened during one shift,
+           Shift_times:the total time of changes between normal and anomaly cases, Train_incremental: Whether Training the case incrementally
+    :return:
+    '''
+    Total_error = 0      # count the number of error happened in the program
+    Detected_error = 0   # count the number of detected errors from detectors
+    MisDetect_error = 0  # count the number of misdetected errors from detectors
+    Total_number = 0     # Total number of cases
+    global Plot_Window_Size,Series_array,Score_array,Detected_array
+    global Gen,train_data,anomaly_detector,Stream_Detector
+    stream_array = []
     if_error = 0
     #total_number = 0
     start_time = time.time()
@@ -165,7 +184,13 @@ def test_process():
     except Exception as e:
         print e
 
-def runplot(pid):
+def runplot(pid,Plot_ylim = Plot_ylim):
+    '''
+    This is for call the plot processing
+    :param Error_rate: pid the main_process pid in order to stop and start the main_process
+           Plot_ylim: the ylim of the plot
+    :return:
+    '''
     import Plot_process
     Plot_process.set_ylim(Plot_ylim)
     Plot_process.setpid(pid)
@@ -176,7 +201,7 @@ if __name__ == '__main__':
     process1 = multiprocessing.Process(target=test_process, args=[])
     process1.start()
     time.sleep(0.5)
-    process2 = multiprocessing.Process(target=runplot, args=[process1.pid])
+    process2 = multiprocessing.Process(target=runplot,args=[process1.pid])
     process2.start()
     '''
     time.sleep(5)

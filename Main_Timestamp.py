@@ -1,3 +1,8 @@
+"""
+:copyright: (c) 2016 Jiakun Jin
+email: jiakun@kth.se
+:license: LGPL?
+"""
 import time
 import numpy as np
 import random
@@ -10,23 +15,18 @@ import multiprocessing
 import psutil
 
 
-Error_rate = 0.1   #error rate happened
-Mean_number = 200  # the mean number of errors happened when a error happens
-Train_incremental = False      # whether train the data incrementally
+__author__ = 'jiakun'
+
+Train_incremental = True      # whether train the data incrementally
 
 
-Total_error = 0      # count the number of error happened in the program
-Detected_error = 0   # count the number of detected errors from detectors
-MisDetect_error = 0  # count the number of misdetected errors from detectors
-Total_number = 0     # Total number of cases
-Plot_Window_Size = 2000    # the plot window size
+
+Plot_Window_Size = 8000    # the plot window size
 Series_array = [0] * Plot_Window_Size
 Score_array = [0] * Plot_Window_Size
 Detected_array = [0] * Plot_Window_Size
 Plot_ylim = 10
 
-Shift_times = 1000   # the total time of changes between normal and anomaly cases
-stream_array = []
 
 random.seed(10)
 Gen,train_data = Config_Generator.Generate_from_timestamp(
@@ -36,7 +36,7 @@ Gen,train_data = Config_Generator.Generate_from_timestamp(
         delimiter=",",
         del_timestamp_column=True,
         timestamp_column=0,
-        percentage=0.7,
+        percentage=0.9,
         incremental = Train_incremental
 )
 
@@ -78,6 +78,12 @@ Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
 
 
 def write_to_file(Info,size=Plot_Window_Size):
+    '''
+    Write the Info to datafile.data inorder to show the plot in the other process
+
+    :param Info:Points need to be plotted, size: the number of points to be plotted in one time
+    :return:
+    '''
     datafile_path = "datafile.txt"
     datafile_id = open(datafile_path, 'w+')
     #here you open the ascii file
@@ -100,13 +106,17 @@ def write_to_file(Info,size=Plot_Window_Size):
     #close the file
 
 
-
-
-#if __name__ != '__main__' or 1==1:
-#if __name__ == '__main__':
 def test_process():
-    global Error_rate,Mean_number,Train_incremental,Total_error,Detected_error,MisDetect_error,Total_number,Plot_Window_Size,Series_array,Score_array,Detected_array
-    global Shift_times,stream_array,Gen,train_data,anomaly_detector,Stream_Detector
+    '''
+    This is for timeseries data
+    :return:
+    '''
+    global Train_incremental,Plot_Window_Size,Series_array,Score_array,Detected_array
+    global Gen,train_data,anomaly_detector,Stream_Detector
+    Total_error = 0      # count the number of error happened in the program
+    Detected_error = 0   # count the number of detected errors from detectors
+    MisDetect_error = 0  # count the number of misdetected errors from detectors
+    Total_number = 0     # Total number of cases
     if_error = 0
     start_time = time.time()
     current_time = 0
@@ -142,16 +152,18 @@ def test_process():
         print e
 
 
-def runplot():
+def runplot(pid):
     import Plot_process
     Plot_process.set_ylim(Plot_ylim)
+    Plot_process.setpid(pid)
     Plot_process.plot_process()
     #Plot_process.pl()
 
 if __name__ == '__main__':
     process1 = multiprocessing.Process(target=test_process, args=[])
-    process2 = multiprocessing.Process(target=runplot, args=[])
+    process2 = multiprocessing.Process(target=runplot, args=[process1.pid])
     process1.start()
+
     time.sleep(1)
 
     process2.start()

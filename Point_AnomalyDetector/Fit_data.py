@@ -1,16 +1,36 @@
+"""
+:copyright: (c) 2016 Jiakun Jin
+email: jiakun@kth.se
+:license: LGPL?
+"""
 import numpy as np
 import sys
 from fitter import Fitter
 import matplotlib.pyplot as plt
 from cStringIO import StringIO
+
+__author__ = 'jiakun'
+
 class Fit_data:
     def find_distribution(self,data,test_distribution=['norm']):
+        '''
+        This is for finding the suitable distribution from test_distributions and poisson
+        use the package of fitter
+        :param data: The data which wants to be trained
+        :param test_distribution: the lists of the distributions which will be used in _fit_continuous
+        :return:
+        '''
         para = self._fit_poisson(data = data)
         if float(para[1]) <= 0.1:
             return para
         para = self._fit_continuous(data=data,dist_list = test_distribution)
         return para
     def _fit_poisson(self,data):
+        '''
+        This method is to find out whether it's suitable for poisson
+        :param data:
+        :return:
+        '''
         # if sum(i >=0.0 for i in data) <= 0.9 * len(data):
         #     return ['poisson',1.0,1.0]
         Max = int(max(data)) + 0.5
@@ -24,6 +44,12 @@ class Fit_data:
         return ['poisson',total_error,(lamb,)]
 
     def _fit_continuous(self,data,dist_list):
+        '''
+        This is to fit continuous distributions from fitter package, the range of distributions are dist_list
+        :param data:
+        :param dist_list: the range of distributions for checking
+        :return:
+        '''
         #print "dist",data
         f = Fitter(data,distributions=dist_list)
         f.fit()

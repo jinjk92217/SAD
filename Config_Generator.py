@@ -1,9 +1,27 @@
+"""
+:copyright: (c) 2016 Jiakun Jin
+email: jiakun@kth.se
+:license: LGPL?
+"""
 from Stream_Generator.Simulation_Generator import Simulation_Generator
 from Stream_Generator.Dataset_Generator import Dataset_Generator
 from scipy.stats import poisson,norm
 from Stream_Generator.Timestamp_Dataset_Generator import Timestamp_Dataset_Generator
 
+
+__author__ = 'jiakun'
+
 def Generate_from_simulation(Normal_Error,Anomaly_Error,list_distribution,type_error,incremental=False,Number_Of_Train=10000):
+    '''
+
+    :param Normal_Error:
+    :param Anomaly_Error:
+    :param list_distribution:
+    :param type_error:
+    :param incremental:
+    :param Number_Of_Train:
+    :return:
+    '''
      #simulation data setup
 
     #Configure the Normal_error or Anomaly_error distribution
@@ -25,6 +43,17 @@ def Generate_from_simulation(Normal_Error,Anomaly_Error,list_distribution,type_e
 
 
 def Generate_from_dataset(filename,delimiter,normal_class,column=-1,type_error = "Sudden",incremental = False,percentage = 0.7):
+    '''
+
+    :param filename:
+    :param delimiter:
+    :param normal_class:
+    :param column:
+    :param type_error:
+    :param incremental:
+    :param percentage:
+    :return:
+    '''
     #Gen = Dataset_Generator("../Document/abalone.data",",",'M',0 ,type_error="Sudden")
     Gen = Dataset_Generator(filename,delimiter,normal_class,column ,type_error=type_error)
     if incremental ==False:
@@ -36,6 +65,16 @@ def Generate_from_dataset(filename,delimiter,normal_class,column=-1,type_error =
 
 
 def Generate_from_timestamp(filename,delimiter=",",del_timestamp_column=True,timestamp_column=0,percentage=0.7,incremental = False):
+    '''
+
+    :param filename:
+    :param delimiter:
+    :param del_timestamp_column:
+    :param timestamp_column:
+    :param percentage:
+    :param incremental:
+    :return:
+    '''
     Gen = Timestamp_Dataset_Generator(filename,delimiter,del_timestamp_column,timestamp_column)
     if incremental ==False:
         # Training percentage

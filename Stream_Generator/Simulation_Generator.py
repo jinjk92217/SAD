@@ -1,24 +1,52 @@
+"""
+:copyright: (c) 2016 Jiakun Jin
+email: jiakun@kth.se
+:license: LGPL?
+"""
 from Generator import Generator
 import numpy as np
+
+__author__ = 'jiakun'
+
 class Simulation_Generator(Generator):
     def __init__(self,list_distribution,normal_error_distribution,anomaly_error_distribution,type_error="Sudden"):
+        '''
+        For generating the siulation stream data, the features are in list_distributions
+        If the need training phase, also used for generating train_data
+        For stream data, they could generate errors from type_error
+        :param list_distribution: the distribution type for normal cases
+        :param normal_error_distribution:the error distribution types for normal cases
+        :param anomaly_error_distribution:the error distribution types for anomaly cases
+        :param type_error: the error type for the stream
+        :return:
+        '''
         Generator.__init__(self,type_error)
         self.list_distribution = list_distribution
         self.normal_error_distribution = normal_error_distribution
         self.anomaly_error_distribution = anomaly_error_distribution
 
     def Generate_TrainData(self,number):
+        '''
+        :param number: number of the data generated for training
+        :return: the matrix of the training data according to the distribution
+        '''
+        return np.column_stack(
+                    self._generate_matrix(self.list_distribution,number)
+        )
         # Generator.Generate_TrainData(self)
         # return self._addclass(np.column_stack(
         #             self._generate_matrix(self.list_distribution,number)
         #         ))
-       return np.column_stack(
-                    self._generate_matrix(self.list_distribution,number)
-                )
+
+
 
 
 
     def _Generate_StreamData(self,number):
+        '''
+        :param number: number of the stream data generated
+        :return: the matrix of the stream data according to the distribution
+        '''
         #Generator.Generate_TrainData(self)
         return np.column_stack(
                     self._generate_matrix(self.list_distribution,number)
@@ -29,6 +57,11 @@ class Simulation_Generator(Generator):
     #     return self._Generate_Stream(type,number)
 
     def Generate_Stream(self,type,number):
+        '''
+        :param type: type is either normal or anomaly
+        :param number: number of the stream data generated
+        :return: the matrix of the stream data according to the distribution and type
+        '''
         Generator.Generate_Stream(self)
         if type == "Normal":
             #print number
@@ -49,21 +82,33 @@ class Simulation_Generator(Generator):
             return self._Generate_StreamData(10)+ self._Generate_error_outlier(10,self.anomaly_error_distribution)
 
     def _generate_matrix(self,list_dist,number):
-            #self.list_distribution = list_dist
-            #print self.list_distribution
-            data = []
-            for x in list_dist:
-                if isinstance(x,int) or isinstance(x,float):
-                    data.append([x]*number)
-                    continue
-                try:
-                    data.append(list(x.rvs(number)))
-                except Exception as e:
-                    print e
-            return data
+        '''
+
+        :param list_dist: generate the stream cases
+        :param number: the number of the stream cases
+        :return: matrix
+        '''
+        #self.list_distribution = list_dist
+        #print self.list_distribution
+        data = []
+        for x in list_dist:
+            if isinstance(x,int) or isinstance(x,float):
+                data.append([x]*number)
+                continue
+            try:
+                data.append(list(x.rvs(number)))
+            except Exception as e:
+                print e
+        return data
 
 
     def _Generate_error_sudden(self,number,distribution):
+        '''
+
+        :param list_dist: generate the stream cases
+        :param number: the number of the stream cases
+        :return: matrix
+        '''
         Generator._Generate_error_sudden(self)
         return np.column_stack(
                        self._generate_matrix(distribution,number)
@@ -71,6 +116,12 @@ class Simulation_Generator(Generator):
 
 
     def _Generate_error_outlier(self,number,distribution):
+        '''
+
+        :param list_dist: generate the stream cases
+        :param number: the number of the stream cases
+        :return: matrix
+        '''
         Generator._Generate_error_outlier(self)
         return np.column_stack(
                        self._generate_matrix(distribution,number)
@@ -78,6 +129,12 @@ class Simulation_Generator(Generator):
 
 
     def _Generate_error_gradual(self,number,distribution):
+        '''
+
+        :param list_dist: generate the stream cases
+        :param number: the number of the stream cases
+        :return: matrix
+        '''
         Generator._Generate_error_gradual(self)
         k = number / 20
         stream = []
