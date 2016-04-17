@@ -1,0 +1,87 @@
+\hypertarget{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator}{}\section{S\+A\+D.\+Stream\+\_\+\+Generator.\+Simulation\+\_\+\+Generator.\+Simulation\+\_\+\+Generator Class Reference}
+\label{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator}\index{S\+A\+D.\+Stream\+\_\+\+Generator.\+Simulation\+\_\+\+Generator.\+Simulation\+\_\+\+Generator@{S\+A\+D.\+Stream\+\_\+\+Generator.\+Simulation\+\_\+\+Generator.\+Simulation\+\_\+\+Generator}}
+Inheritance diagram for S\+A\+D.\+Stream\+\_\+\+Generator.\+Simulation\+\_\+\+Generator.\+Simulation\+\_\+\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_a2103b42b5bcb5cf441e74de526695f86}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, list\+\_\+distribution, normal\+\_\+error\+\_\+distribution, anomaly\+\_\+error\+\_\+distribution, type\+\_\+error=\char`\"{}Sudden\char`\"{})
+\item 
+def \hyperlink{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_a0ca784a29449c50c31db5a171ea3c378}{Generate\+\_\+\+Train\+Data} (self, number)
+\item 
+def \hyperlink{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_ab3812dceb7cec4fdac22dae14f72b793}{Generate\+\_\+\+Stream} (self, type, number)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries list\+\_\+distribution}\hypertarget{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_ada97d143aed23d023a14802be273cc43}{}\label{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_ada97d143aed23d023a14802be273cc43}
+
+\item 
+{\bfseries normal\+\_\+error\+\_\+distribution}\hypertarget{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_ac82d794c9ff18c9ed18b37d99acbd310}{}\label{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_ac82d794c9ff18c9ed18b37d99acbd310}
+
+\item 
+{\bfseries anomaly\+\_\+error\+\_\+distribution}\hypertarget{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_a3b5f692bcddf70d6f0aa71c4368a1ed9}{}\label{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_a3b5f692bcddf70d6f0aa71c4368a1ed9}
+
+\item 
+{\bfseries type\+\_\+error}\hypertarget{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_a25fe829176c8ace01af7fb47f4a622b2}{}\label{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_a25fe829176c8ace01af7fb47f4a622b2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{S\+A\+D\+::\+Stream\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator@{S\+A\+D\+::\+Stream\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!S\+A\+D\+::\+Stream\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator@{S\+A\+D\+::\+Stream\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, list\+\_\+distribution, normal\+\_\+error\+\_\+distribution, anomaly\+\_\+error\+\_\+distribution, type\+\_\+error=""Sudden"")}{__init__(self, list_distribution, normal_error_distribution, anomaly_error_distribution, type_error="Sudden")}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Stream\+\_\+\+Generator.\+Simulation\+\_\+\+Generator.\+Simulation\+\_\+\+Generator.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{list\+\_\+distribution, }
+\item[{}]{normal\+\_\+error\+\_\+distribution, }
+\item[{}]{anomaly\+\_\+error\+\_\+distribution, }
+\item[{}]{type\+\_\+error = {\ttfamily \char`\"{}Sudden\char`\"{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_a2103b42b5bcb5cf441e74de526695f86}{}\label{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_a2103b42b5bcb5cf441e74de526695f86}
+\begin{DoxyVerb}For generating the siulation stream data, the features are in list_distributions
+If the need training phase, also used for generating train_data
+For stream data, they could generate errors from type_error
+:param list_distribution: the distribution type for normal cases
+:param normal_error_distribution:the error distribution types for normal cases
+:param anomaly_error_distribution:the error distribution types for anomaly cases
+:param type_error: the error type for the stream
+:return:
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\index{S\+A\+D\+::\+Stream\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator@{S\+A\+D\+::\+Stream\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator}!Generate\+\_\+\+Stream@{Generate\+\_\+\+Stream}}
+\index{Generate\+\_\+\+Stream@{Generate\+\_\+\+Stream}!S\+A\+D\+::\+Stream\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator@{S\+A\+D\+::\+Stream\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator}}
+\subsubsection[{\texorpdfstring{Generate\+\_\+\+Stream(self, type, number)}{Generate_Stream(self, type, number)}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Stream\+\_\+\+Generator.\+Simulation\+\_\+\+Generator.\+Simulation\+\_\+\+Generator.\+Generate\+\_\+\+Stream (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{type, }
+\item[{}]{number}
+\end{DoxyParamCaption}
+)}\hypertarget{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_ab3812dceb7cec4fdac22dae14f72b793}{}\label{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_ab3812dceb7cec4fdac22dae14f72b793}
+\begin{DoxyVerb}:param type: type is either normal or anomaly
+:param number: number of the stream data generated
+:return: the matrix of the stream data according to the distribution and type
+\end{DoxyVerb}
+ \index{S\+A\+D\+::\+Stream\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator@{S\+A\+D\+::\+Stream\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator}!Generate\+\_\+\+Train\+Data@{Generate\+\_\+\+Train\+Data}}
+\index{Generate\+\_\+\+Train\+Data@{Generate\+\_\+\+Train\+Data}!S\+A\+D\+::\+Stream\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator@{S\+A\+D\+::\+Stream\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator\+::\+Simulation\+\_\+\+Generator}}
+\subsubsection[{\texorpdfstring{Generate\+\_\+\+Train\+Data(self, number)}{Generate_TrainData(self, number)}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Stream\+\_\+\+Generator.\+Simulation\+\_\+\+Generator.\+Simulation\+\_\+\+Generator.\+Generate\+\_\+\+Train\+Data (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{number}
+\end{DoxyParamCaption}
+)}\hypertarget{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_a0ca784a29449c50c31db5a171ea3c378}{}\label{classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator_a0ca784a29449c50c31db5a171ea3c378}
+\begin{DoxyVerb}:param number: number of the data generated for training
+:return: the matrix of the training data according to the distribution
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Stream\+\_\+\+Generator/Simulation\+\_\+\+Generator.\+py\end{DoxyCompactItemize}

@@ -12,10 +12,12 @@ __author__ = 'jiakun'
 def pyisc_PointDetector(train_data=[],models=[],incremental=False,test_distribution=['norm']):
     '''
 
-    :param train_data:
-    :param models:
-    :param incremental:
-    :param test_distribution:
+    :param train_data: The training data for the pyisc point detector, they are in matrix format
+    :param models: The models used for incremental detection,
+    e.g. [pyisc.P_Gaussian(1),pyisc.P_Gaussian(2),pyisc.P_Poisson(3,0),pyisc.P_Poisson(4,0)]
+    :param incremental: Whether they are training incremental or not
+    :param test_distribution: If there is training phase, the test_distribution is the list used for testing the best distribution
+    e.g.['norm']
     :return:
     '''
     if incremental==False:

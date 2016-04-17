@@ -1,0 +1,97 @@
+\hypertarget{namespaceSAD_1_1Config__Generator}{}\section{S\+A\+D.\+Config\+\_\+\+Generator Namespace Reference}
+\label{namespaceSAD_1_1Config__Generator}\index{S\+A\+D.\+Config\+\_\+\+Generator@{S\+A\+D.\+Config\+\_\+\+Generator}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceSAD_1_1Config__Generator_ae141063b2f05ef30572b428d0ce17a54}{Generate\+\_\+from\+\_\+simulation} (Normal\+\_\+\+Error, Anomaly\+\_\+\+Error, list\+\_\+distribution, type\+\_\+error, incremental=False, Number\+\_\+\+Of\+\_\+\+Train=10000)
+\item 
+def \hyperlink{namespaceSAD_1_1Config__Generator_a7a4f97db8a198075e635bac49c744e3e}{Generate\+\_\+from\+\_\+dataset} (filename, delimiter, normal\+\_\+class, column=-\/1, type\+\_\+error=\char`\"{}Sudden\char`\"{}, incremental=False, percentage=0.\+7)
+\item 
+def \hyperlink{namespaceSAD_1_1Config__Generator_a115ab2861e50a264cb48a51cbfde5340}{Generate\+\_\+from\+\_\+timestamp} (filename, delimiter=\char`\"{},  del\+\_\+timestamp\+\_\+column=True,  timestamp\+\_\+column=0,  percentage=0.\+7,  incremental=False)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}:copyright: (c) 2016 Jiakun Jin
+email: jiakun@kth.se
+:license: LGPL?
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{S\+A\+D\+::\+Config\+\_\+\+Generator@{S\+A\+D\+::\+Config\+\_\+\+Generator}!Generate\+\_\+from\+\_\+dataset@{Generate\+\_\+from\+\_\+dataset}}
+\index{Generate\+\_\+from\+\_\+dataset@{Generate\+\_\+from\+\_\+dataset}!S\+A\+D\+::\+Config\+\_\+\+Generator@{S\+A\+D\+::\+Config\+\_\+\+Generator}}
+\subsubsection[{\texorpdfstring{Generate\+\_\+from\+\_\+dataset(filename, delimiter, normal\+\_\+class, column=-\/1, type\+\_\+error=""Sudden"", incremental=\+False, percentage=0.\+7)}{Generate_from_dataset(filename, delimiter, normal_class, column=-1, type_error="Sudden", incremental=False, percentage=0.7)}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Config\+\_\+\+Generator.\+Generate\+\_\+from\+\_\+dataset (
+\begin{DoxyParamCaption}
+\item[{}]{filename, }
+\item[{}]{delimiter, }
+\item[{}]{normal\+\_\+class, }
+\item[{}]{column = {\ttfamily -\/1}, }
+\item[{}]{type\+\_\+error = {\ttfamily \char`\"{}Sudden\char`\"{}}, }
+\item[{}]{incremental = {\ttfamily False}, }
+\item[{}]{percentage = {\ttfamily 0.7}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceSAD_1_1Config__Generator_a7a4f97db8a198075e635bac49c744e3e}{}\label{namespaceSAD_1_1Config__Generator_a7a4f97db8a198075e635bac49c744e3e}
+\begin{DoxyVerb}:param filename: The simulation data generated from data set
+e.g."./Data/abalone.data"
+:param delimiter: The delimiter of the data set , by default is ","
+:param normal_class: The normal class of one feature
+e.g. 'M'
+:param column: The column of the feature selected for the decision
+e.g. 0
+:param type_error: The type of errors generated in simulation cases
+e.g."Sudden" or "Gradual" or "Outlier"
+:param incremental:If the incremental is true,then no need training data, else, need training data
+:param percentage:if incremental is true, no usage, else, the simulation cases for training data
+:return:
+\end{DoxyVerb}
+ \index{S\+A\+D\+::\+Config\+\_\+\+Generator@{S\+A\+D\+::\+Config\+\_\+\+Generator}!Generate\+\_\+from\+\_\+simulation@{Generate\+\_\+from\+\_\+simulation}}
+\index{Generate\+\_\+from\+\_\+simulation@{Generate\+\_\+from\+\_\+simulation}!S\+A\+D\+::\+Config\+\_\+\+Generator@{S\+A\+D\+::\+Config\+\_\+\+Generator}}
+\subsubsection[{\texorpdfstring{Generate\+\_\+from\+\_\+simulation(\+Normal\+\_\+\+Error, Anomaly\+\_\+\+Error, list\+\_\+distribution, type\+\_\+error, incremental=\+False, Number\+\_\+\+Of\+\_\+\+Train=10000)}{Generate_from_simulation(Normal_Error, Anomaly_Error, list_distribution, type_error, incremental=False, Number_Of_Train=10000)}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Config\+\_\+\+Generator.\+Generate\+\_\+from\+\_\+simulation (
+\begin{DoxyParamCaption}
+\item[{}]{Normal\+\_\+\+Error, }
+\item[{}]{Anomaly\+\_\+\+Error, }
+\item[{}]{list\+\_\+distribution, }
+\item[{}]{type\+\_\+error, }
+\item[{}]{incremental = {\ttfamily False}, }
+\item[{}]{Number\+\_\+\+Of\+\_\+\+Train = {\ttfamily 10000}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceSAD_1_1Config__Generator_ae141063b2f05ef30572b428d0ce17a54}{}\label{namespaceSAD_1_1Config__Generator_ae141063b2f05ef30572b428d0ce17a54}
+\begin{DoxyVerb}This is functions for generating simulation data
+:param Normal_Error: The error distributions added for normal cases
+e.g. [0,poisson(1.0),poisson(1.0),poisson(1.0),poisson(1.0)]
+:param Anomaly_Error: The error distributions added for anomaly cases
+e.g.[0,poisson(1.0),poisson(1.0),poisson(10.0),poisson(1.0)]
+:param list_distribution: The distributions used for cases
+e.g.[1,norm(5,12),norm(10,20),poisson(10),poisson(100)]
+:param type_error: The type of errors generated in simulation cases
+e.g."Sudden" or "Gradual" or "Outlier"
+:param incremental: If the incremental is true,then no need training data, else, need training data
+:param Number_Of_Train: if incremental is true, no usage, else, the simulation cases for training data
+:return:
+\end{DoxyVerb}
+ \index{S\+A\+D\+::\+Config\+\_\+\+Generator@{S\+A\+D\+::\+Config\+\_\+\+Generator}!Generate\+\_\+from\+\_\+timestamp@{Generate\+\_\+from\+\_\+timestamp}}
+\index{Generate\+\_\+from\+\_\+timestamp@{Generate\+\_\+from\+\_\+timestamp}!S\+A\+D\+::\+Config\+\_\+\+Generator@{S\+A\+D\+::\+Config\+\_\+\+Generator}}
+\subsubsection[{\texorpdfstring{Generate\+\_\+from\+\_\+timestamp(filename, delimiter="",  del\+\_\+timestamp\+\_\+column=\+True,  timestamp\+\_\+column=0,  percentage=0.\+7,  incremental=\+False)}{Generate_from_timestamp(filename, delimiter=",  del_timestamp_column=True,  timestamp_column=0,  percentage=0.7,  incremental=False)}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Config\+\_\+\+Generator.\+Generate\+\_\+from\+\_\+timestamp (
+\begin{DoxyParamCaption}
+\item[{}]{filename, }
+\item[{}]{delimiter = {\ttfamily \char`\"{}}, }
+\item[{}]{del\+\_\+timestamp\+\_\+column = {\ttfamily True}, }
+\item[{}]{timestamp\+\_\+column = {\ttfamily 0}, }
+\item[{}]{percentage = {\ttfamily 0.7}, }
+\item[{}]{incremental = {\ttfamily False}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceSAD_1_1Config__Generator_a115ab2861e50a264cb48a51cbfde5340}{}\label{namespaceSAD_1_1Config__Generator_a115ab2861e50a264cb48a51cbfde5340}
+\begin{DoxyVerb}:param filename:The filepath of the data set in timestamp
+e.g."./Data/abalone.data"
+:param delimiter: The delimiter in the data set,by default ","
+e.g.","
+:param del_timestamp_column: Whether to delete the timestamp column or not, by default, "True"
+e.g.True
+:param timestamp_column: The column of the timestamp in data set
+e.g. 0
+:param percentage: If incremental is false, then percentage is the percentage for the training data set
+:param incremental: whether the stream is trained incrementally
+:return:
+\end{DoxyVerb}
+ 

@@ -1,0 +1,52 @@
+\hypertarget{namespaceSAD_1_1Config__PointDetector}{}\section{S\+A\+D.\+Config\+\_\+\+Point\+Detector Namespace Reference}
+\label{namespaceSAD_1_1Config__PointDetector}\index{S\+A\+D.\+Config\+\_\+\+Point\+Detector@{S\+A\+D.\+Config\+\_\+\+Point\+Detector}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceSAD_1_1Config__PointDetector_a4a47fd76139083b7d9f41d3997edf3f0}{pyisc\+\_\+\+Point\+Detector} (train\+\_\+data=\mbox{[}$\,$\mbox{]}, models=\mbox{[}$\,$\mbox{]}, incremental=False, test\+\_\+distribution=\mbox{[}\textquotesingle{}norm\textquotesingle{}\mbox{]})
+\item 
+def \hyperlink{namespaceSAD_1_1Config__PointDetector_a420441441318e4c5c12031e2e19dce98}{lof\+\_\+\+Point\+Detector} (train\+\_\+data=\mbox{[}$\,$\mbox{]}, n\+\_\+neighbors=10, algorithm=\textquotesingle{}auto\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}:copyright: (c) 2016 Jiakun Jin
+email: jiakun@kth.se
+:license: LGPL?
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{S\+A\+D\+::\+Config\+\_\+\+Point\+Detector@{S\+A\+D\+::\+Config\+\_\+\+Point\+Detector}!lof\+\_\+\+Point\+Detector@{lof\+\_\+\+Point\+Detector}}
+\index{lof\+\_\+\+Point\+Detector@{lof\+\_\+\+Point\+Detector}!S\+A\+D\+::\+Config\+\_\+\+Point\+Detector@{S\+A\+D\+::\+Config\+\_\+\+Point\+Detector}}
+\subsubsection[{\texorpdfstring{lof\+\_\+\+Point\+Detector(train\+\_\+data=[], n\+\_\+neighbors=10, algorithm=\textquotesingle{}auto\textquotesingle{})}{lof_PointDetector(train_data=[], n_neighbors=10, algorithm='auto')}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Config\+\_\+\+Point\+Detector.\+lof\+\_\+\+Point\+Detector (
+\begin{DoxyParamCaption}
+\item[{}]{train\+\_\+data = {\ttfamily \mbox{[}\mbox{]}}, }
+\item[{}]{n\+\_\+neighbors = {\ttfamily 10}, }
+\item[{}]{algorithm = {\ttfamily \textquotesingle{}auto\textquotesingle{}}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceSAD_1_1Config__PointDetector_a420441441318e4c5c12031e2e19dce98}{}\label{namespaceSAD_1_1Config__PointDetector_a420441441318e4c5c12031e2e19dce98}
+\begin{DoxyVerb}:param train_data:
+:param n_neighbors:
+:param algorithm:
+:return:
+\end{DoxyVerb}
+ \index{S\+A\+D\+::\+Config\+\_\+\+Point\+Detector@{S\+A\+D\+::\+Config\+\_\+\+Point\+Detector}!pyisc\+\_\+\+Point\+Detector@{pyisc\+\_\+\+Point\+Detector}}
+\index{pyisc\+\_\+\+Point\+Detector@{pyisc\+\_\+\+Point\+Detector}!S\+A\+D\+::\+Config\+\_\+\+Point\+Detector@{S\+A\+D\+::\+Config\+\_\+\+Point\+Detector}}
+\subsubsection[{\texorpdfstring{pyisc\+\_\+\+Point\+Detector(train\+\_\+data=[], models=[], incremental=\+False, test\+\_\+distribution=[\textquotesingle{}norm\textquotesingle{}])}{pyisc_PointDetector(train_data=[], models=[], incremental=False, test_distribution=['norm'])}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Config\+\_\+\+Point\+Detector.\+pyisc\+\_\+\+Point\+Detector (
+\begin{DoxyParamCaption}
+\item[{}]{train\+\_\+data = {\ttfamily \mbox{[}\mbox{]}}, }
+\item[{}]{models = {\ttfamily \mbox{[}\mbox{]}}, }
+\item[{}]{incremental = {\ttfamily False}, }
+\item[{}]{test\+\_\+distribution = {\ttfamily \mbox{[}\textquotesingle{}norm\textquotesingle{}\mbox{]}}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceSAD_1_1Config__PointDetector_a4a47fd76139083b7d9f41d3997edf3f0}{}\label{namespaceSAD_1_1Config__PointDetector_a4a47fd76139083b7d9f41d3997edf3f0}
+\begin{DoxyVerb}:param train_data: The training data for the pyisc point detector, they are in matrix format
+:param models: The models used for incremental detection,
+e.g. [pyisc.P_Gaussian(1),pyisc.P_Gaussian(2),pyisc.P_Poisson(3,0),pyisc.P_Poisson(4,0)]
+:param incremental: Whether they are training incremental or not
+:param test_distribution: If there is training phase, the test_distribution is the list used for testing the best distribution
+e.g.['norm']
+:return:
+\end{DoxyVerb}
+ 

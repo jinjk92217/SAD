@@ -1,0 +1,53 @@
+\hypertarget{classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF}{}\section{S\+A\+D.\+Point\+\_\+\+Anomaly\+Detector.\+lof.\+L\+OF Class Reference}
+\label{classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF}\index{S\+A\+D.\+Point\+\_\+\+Anomaly\+Detector.\+lof.\+L\+OF@{S\+A\+D.\+Point\+\_\+\+Anomaly\+Detector.\+lof.\+L\+OF}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF_a69d2963f6872ad3ad242de18d6e13e02}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, knn)
+\item 
+def \hyperlink{classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF_a1ef7844074fc0eba2712ea9c936f78f0}{anomaly\+\_\+score} (self, X, in\+\_\+training\+\_\+set=False)
+\item 
+def {\bfseries anomaly\+\_\+score\+\_\+training\+\_\+data} (self)\hypertarget{classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF_a900133981aa14fe76708e11ceb845b9e}{}\label{classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF_a900133981aa14fe76708e11ceb845b9e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{S\+A\+D\+::\+Point\+\_\+\+Anomaly\+Detector\+::lof\+::\+L\+OF@{S\+A\+D\+::\+Point\+\_\+\+Anomaly\+Detector\+::lof\+::\+L\+OF}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!S\+A\+D\+::\+Point\+\_\+\+Anomaly\+Detector\+::lof\+::\+L\+OF@{S\+A\+D\+::\+Point\+\_\+\+Anomaly\+Detector\+::lof\+::\+L\+OF}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, knn)}{__init__(self, knn)}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Point\+\_\+\+Anomaly\+Detector.\+lof.\+L\+O\+F.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{knn}
+\end{DoxyParamCaption}
+)}\hypertarget{classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF_a69d2963f6872ad3ad242de18d6e13e02}{}\label{classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF_a69d2963f6872ad3ad242de18d6e13e02}
+\begin{DoxyVerb}Class LOF implements the Local Outlier Factor algorithm,
+see http://www.dbs.ifi.lmu.de/Publikationen/Papers/LOF.pdf.
+It uses the scikit-learn nearest neighbour algorithm to retrieve neighbours and
+compute anomaly scores for data given a training set in the knn. So, for updating
+the algorithm, the knn instance should be updated.
+
+:param knn: an instance of klearn.neighbors.base.KNeighborsMixin, for instance, sklearn.neighbors.unsupervised.NearestNeighbors
+:return:
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\index{S\+A\+D\+::\+Point\+\_\+\+Anomaly\+Detector\+::lof\+::\+L\+OF@{S\+A\+D\+::\+Point\+\_\+\+Anomaly\+Detector\+::lof\+::\+L\+OF}!anomaly\+\_\+score@{anomaly\+\_\+score}}
+\index{anomaly\+\_\+score@{anomaly\+\_\+score}!S\+A\+D\+::\+Point\+\_\+\+Anomaly\+Detector\+::lof\+::\+L\+OF@{S\+A\+D\+::\+Point\+\_\+\+Anomaly\+Detector\+::lof\+::\+L\+OF}}
+\subsubsection[{\texorpdfstring{anomaly\+\_\+score(self, X, in\+\_\+training\+\_\+set=\+False)}{anomaly_score(self, X, in_training_set=False)}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Point\+\_\+\+Anomaly\+Detector.\+lof.\+L\+O\+F.\+anomaly\+\_\+score (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{X, }
+\item[{}]{in\+\_\+training\+\_\+set = {\ttfamily False}}
+\end{DoxyParamCaption}
+)}\hypertarget{classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF_a1ef7844074fc0eba2712ea9c936f78f0}{}\label{classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF_a1ef7844074fc0eba2712ea9c936f78f0}
+\begin{DoxyVerb}:param X: an array containing data to score
+:param in_training_set: a boolean that indicates whether the scored data set is present in the training data set.
+:return: an anomly score for each data point in X
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Point\+\_\+\+Anomaly\+Detector/lof.\+py\end{DoxyCompactItemize}
