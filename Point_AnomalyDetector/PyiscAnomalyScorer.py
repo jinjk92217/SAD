@@ -40,12 +40,20 @@ class PyiscAnomalyScorer(AnomalyScorer):
         :param data: the training data for pyisc
         :return:
         '''
-        anomaly_detector = pyisc.AnomalyDetector(
+        self.anomaly_detector = pyisc.AnomalyDetector(
             component_models=self.component_models,
             output_combination_rule=pyisc.cr_max
         )
         if data!=[]:
-            anomaly_detector.fit(data)
+            self.anomaly_detector.fit(data)
         #scores = anomaly_detector.anomaly_score(data)
         #print scores[-15:]
-        return anomaly_detector
+        #return anomaly_detector
+
+    def anomaly_score(self,data):
+        AnomalyScorer.anomaly_score(self)
+        return self.anomaly_detector.anomaly_score(data)
+
+    def fit_incrementally(self,data):
+        AnomalyScorer.fit_incrementally(self)
+        return self.anomaly_detector.fit_incrementally(data)

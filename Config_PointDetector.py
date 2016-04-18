@@ -29,7 +29,8 @@ def pyisc_PointDetector(train_data=[],models=[],incremental=False,test_distribut
         models=models
     )
     #if incremental == False:
-    return Point_Detector.Train_PointDetector(train_data)
+    Point_Detector.Train_PointDetector(train_data)
+    return Point_Detector
 
 
 
@@ -42,4 +43,5 @@ def lof_PointDetector(train_data=[],n_neighbors = 10, algorithm='auto'):
     :return:
     '''
     Point_Detector = LOFAnomalyScorer(n_neighbors, algorithm)
-    return Point_Detector.Train_PointDetector(train_data)
+    Point_Detector.Train_PointDetector(train_data)
+    return Point_Detector

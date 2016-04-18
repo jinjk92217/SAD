@@ -44,6 +44,13 @@ class LOFAnomalyScorer(AnomalyScorer):
         nbrs = NearestNeighbors(n_neighbors=self.n_neighbors, algorithm=self.algorithm).fit(data)
         #nbrs.kneighbors([[0, 0, 1.3,1,2,3]], 2, return_distance=False)
         #print(nbrs.predict([[-1.1,-1.1]]))
-        lof = LOF(nbrs)
-        lof.anomaly_score_training_data()
-        return lof
+        self.lof = LOF(nbrs)
+        self.lof.anomaly_score_training_data()
+        #return lof
+    def anomaly_score(self,data):
+        AnomalyScorer.anomaly_score(self)
+        return self.lof.anomaly_score(data)
+
+    def fit_incrementally(self,data):
+        AnomalyScorer.fit_incrementally(self)
+        return self.lof.fit_incrementally(data)

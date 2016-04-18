@@ -17,7 +17,7 @@ import psutil
 
 __author__ = 'jiakun'
 
-Train_incremental = True      # whether train the data incrementally
+Train_incremental = False      # whether train the data incrementally
 
 
 

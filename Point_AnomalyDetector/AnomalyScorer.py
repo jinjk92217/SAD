@@ -22,3 +22,8 @@ class AnomalyScorer(object):
         :return:
         '''
         pass
+
+    def anomaly_score(self,data = []):
+        pass
+    def fit_incrementally(self,data = []):
+        pass

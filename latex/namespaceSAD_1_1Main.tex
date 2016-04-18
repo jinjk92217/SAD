@@ -149,8 +149,9 @@ There will be around Error_rate percentage error occurs
 \subsubsection[{\texorpdfstring{Stream\+\_\+\+Detector}{Stream_Detector}}]{\setlength{\rightskip}{0pt plus 5cm}S\+A\+D.\+Main.\+Stream\+\_\+\+Detector}\hypertarget{namespaceSAD_1_1Main_adedbb4deb28e6f7b98f42f21f1330352}{}\label{namespaceSAD_1_1Main_adedbb4deb28e6f7b98f42f21f1330352}
 {\bfseries Initial value\+:}
 \begin{DoxyCode}
-1 = Config\_StreamDetector.DDM\_StreamDetector(
-2     \textcolor{comment}{#filename = "./Stream\_AnomalyDetector/C++/DDM.so",}
-3     threshold = 3.0
-4 )
+1 = Config\_StreamDetector.CUSUM\_StreamDetector(
+2     \textcolor{comment}{#filename = "./Stream\_AnomalyDetector/C++/CUSUM.so",}
+3     drift = 1.0,
+4     threshold = 12.0
+5 )
 \end{DoxyCode}

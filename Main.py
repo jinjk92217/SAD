@@ -66,16 +66,16 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 # )
 
 
-Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
-    #filename = "./Stream_AnomalyDetector/C++/DDM.so",
-    threshold = 3.0
-)
-
-# Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
-#     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
-#     drift = 1.0,
-#     threshold = 12.0
+# Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
+#     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
+#     threshold = 3.0
 # )
+
+Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
+    #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
+    drift = 1.0,
+    threshold = 12.0
+)
 
 
 
