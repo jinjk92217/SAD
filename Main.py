@@ -67,25 +67,18 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 #     algorithm = 'auto'
 # )
 #
-# anomaly_detector = Config_PointDetector.SVM_PointDetector(
-#     train_data=train_data,
-#     nu = 0.1,
-#     kernel = "poly",
-#     gamma = 0.1,
-#     coefficient = 1.0
-# )
 
 
-# Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
-#     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
-#     threshold = 2.0
-# )
-
-Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
-    #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
-    drift = 1.0,
-    threshold = 12.0
+Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
+    #filename = "./Stream_AnomalyDetector/C++/DDM.so",
+    threshold = 8.0
 )
+
+# Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
+#     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
+#     drift = 1.0,
+#     threshold = 12.0
+# )
 
 
 # Stream_Detector = Config_StreamDetector.PRAAG_StreamDetector(
