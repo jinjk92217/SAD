@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2eb71ea0-361c-4dda-8795-1d65f7139204" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Config_PointDetector.py" afterPath="$PROJECT_DIR$/Config_PointDetector.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.py" afterPath="$PROJECT_DIR$/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main_Timestamp.py" afterPath="$PROJECT_DIR$/Main_Timestamp.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stream_Generator/Dataset_Generator.py" afterPath="$PROJECT_DIR$/Stream_Generator/Dataset_Generator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stream_Generator/Generator.py" afterPath="$PROJECT_DIR$/Stream_Generator/Generator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stream_Generator/Simulation_Generator.py" afterPath="$PROJECT_DIR$/Stream_Generator/Simulation_Generator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stream_Generator/Timestamp_Dataset_Generator.py" afterPath="$PROJECT_DIR$/Stream_Generator/Timestamp_Dataset_Generator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/__init__.py" afterPath="$PROJECT_DIR$/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datafile.txt" afterPath="$PROJECT_DIR$/datafile.txt" />
     </list>
     <ignored path="SAD.iws" />
@@ -32,13 +24,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="171" column="41" selection-start-line="171" selection-start-column="41" selection-end-line="171" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.29411766">
+              <caret line="160" column="32" selection-start-line="160" selection-start-column="32" selection-end-line="160" selection-end-column="32" />
               <folding>
                 <element signature="e#77#88#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config_PointDetector.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Config_PointDetector.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <element signature="e#77#148#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main_Timestamp.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main_Timestamp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main_Timestamp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.8941176">
-              <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,7 +141,6 @@
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/LOFAnomalyScorer.py" />
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/PyiscAnomalyScorer_advanced.py" />
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/SVM.py" />
-        <option value="$PROJECT_DIR$/Config_PointDetector.py" />
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/SVMAnomalyScorer.py" />
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/__init__.py" />
         <option value="$PROJECT_DIR$/Stream_AnomalyDetector/__init__.py" />
@@ -150,6 +153,7 @@
         <option value="$PROJECT_DIR$/Stream_Generator/Generator.py" />
         <option value="$PROJECT_DIR$/Main_Timestamp.py" />
         <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/Config_PointDetector.py" />
       </list>
     </option>
   </component>
@@ -203,20 +207,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SAD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SAD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Stream_Generator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -235,7 +225,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Main_Timestamp">
+  <component name="RunManager" selected="Python.Main">
     <configuration default="false" name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -270,23 +260,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="plot_oneclass" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="SAD" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot_oneclass.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="Simulation_Generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -317,6 +290,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="SAD" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Stream_Generator/Dataset_Generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Config_PointDetector" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="SAD" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Config_PointDetector.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -446,17 +436,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Main" />
       <item index="1" class="java.lang.String" itemvalue="Python.Main_Timestamp" />
-      <item index="2" class="java.lang.String" itemvalue="Python.plot_oneclass" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Simulation_Generator" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Dataset_Generator" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Simulation_Generator" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Dataset_Generator" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Config_PointDetector" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Main_Timestamp" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Main" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Dataset_Generator" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Simulation_Generator" />
-        <item index="4" class="java.lang.String" itemvalue="Python.plot_oneclass" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Config_PointDetector" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Main_Timestamp" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Dataset_Generator" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Simulation_Generator" />
       </list>
     </recent_temporary>
   </component>
@@ -527,7 +517,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
           <folding>
-            <element signature="e#77#148#0" expanded="false" />
+            <element signature="e#77#148#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -702,16 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Config_PointDetector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2470589">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
-          <folding>
-            <element signature="e#77#148#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Point_AnomalyDetector/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -796,21 +776,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
+    <entry file="file://$PROJECT_DIR$/Main_Timestamp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="171" column="41" selection-start-line="171" selection-start-column="41" selection-end-line="171" selection-end-column="41" />
+          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config_PointDetector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#77#88#0" expanded="true" />
+            <element signature="e#77#148#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main_Timestamp.py">
+    <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8941176">
-          <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
-          <folding />
+        <state vertical-scroll-proportion="0.29411766">
+          <caret line="160" column="32" selection-start-line="160" selection-start-column="32" selection-end-line="160" selection-end-column="32" />
+          <folding>
+            <element signature="e#77#88#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

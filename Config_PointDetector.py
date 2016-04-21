@@ -6,7 +6,7 @@ email: jiakun@kth.se
 from Point_AnomalyDetector.PyiscAnomalyScorer import PyiscAnomalyScorer
 from Point_AnomalyDetector.PyiscAnomalyScorer_advanced import PyiscAnomalyScorer_advanced
 from Point_AnomalyDetector.LOFAnomalyScorer import LOFAnomalyScorer
-from Point_AnomalyDetector.SVMAnomalyScorer import SVMAnomalyScorer
+
 
 __author__ = 'jiakun'
 
