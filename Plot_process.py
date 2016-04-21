@@ -57,8 +57,8 @@ def animate(i):
     props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
     textstr=""
     #print len(info)
-    if len(info)==5:
-        textstr = 'MisDetected_error=%d\nDetected_error=%d\nTotal_error=%d\nRate=%f'%(int(info[1]),int(info[2]),int(info[3]),float(info[4]))
+    if len(info)==7:
+        textstr = 'MisDetected_error=%d\nDetected_error=%d\nTotal_error=%d\nRate=%f\nMisdetected=%f\nDetected=%f'%(int(info[1]),int(info[2]),int(info[3]),float(info[4]),float(info[5]),float(info[6]))
     ax1.text(0.05, 0.95, textstr, transform=ax1.transAxes, fontsize=14,
         verticalalignment='top', bbox=props)
     ax1.set_ylim([0.0, ylim])

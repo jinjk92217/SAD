@@ -88,13 +88,13 @@ Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
 )
 
 
-Stream_Detector = Config_StreamDetector.PRAAG_StreamDetector(
-    r = 250,  
-    l = 1000,  
-    e = 0.0001,  
-    a = 30.0,
-    k = 0.01
-)
+# Stream_Detector = Config_StreamDetector.PRAAG_StreamDetector(
+#     r = 250,
+#     l = 1000,
+#     e = 0.0001,
+#     a = 30.0,
+#     k = 0.01
+# )
 
 
 def write_to_file(Info,size=Plot_Window_Size):
@@ -197,12 +197,12 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             if Total_number%Plot_Window_Size == Plot_Window_Size-1:
                 try:
                     current_time = time.time() - start_time
-                    write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time])
+                    write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,1.0*MisDetect_error/Total_error,1.0*Detected_error/Total_error])
                 except Exception as e:
                     print e
     try:
         current_time = time.time() - start_time
-        write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time],size=Total_number%Plot_Window_Size)
+        write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,1.0*MisDetect_error/Total_error,1.0*Detected_error/Total_error],size=Total_number%Plot_Window_Size)
     except Exception as e:
         print e
 
