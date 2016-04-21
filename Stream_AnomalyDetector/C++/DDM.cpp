@@ -15,11 +15,13 @@ extern "C" {
                 p_min = INF;
                 s_min = INF;
         }
-	void init(double _threshold){
+	void init(double _threshold, double _alpha, double _beta){
 		threshold = _threshold;
 		newDrift = false;
-		alpha = 2.0;
-		beta = 3.0;
+		alpha = _alpha;
+		beta = _beta;
+		//alpha = 2.0;
+		//beta = 3.0;
 		Initialize();
 	}
 	bool prediction(double xi){

@@ -9,14 +9,14 @@ from Stream_AnomalyDetector.PRAAG import PRAAG
 
 __author__ = 'jiakun'
 
-def DDM_StreamDetector(threshold=1):
+def DDM_StreamDetector(threshold=1,alpha = 2.0, beta = 3.0 ):
     '''
 
     :param threshold: When the score exceeds the threshold then the prob of anomalous increases
     e.g. 3.0
     :return:
     '''
-    return DDM(threshold)
+    return DDM(threshold,alpha,beta)
 
 
 def CUSUM_StreamDetector(drift = 1, threshold = 1):

@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2eb71ea0-361c-4dda-8795-1d65f7139204" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.so" afterPath="$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.so" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Config_StreamDetector.py" afterPath="$PROJECT_DIR$/Config_StreamDetector.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.py" afterPath="$PROJECT_DIR$/Main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.cpp" afterPath="$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py" afterPath="$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datafile.txt" afterPath="$PROJECT_DIR$/datafile.txt" />
     </list>
     <ignored path="SAD.iws" />
@@ -30,8 +31,8 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.9418886">
-              <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.036319613">
+              <caret line="58" column="43" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
               <folding>
                 <element signature="e#77#88#0" expanded="true" />
               </folding>
@@ -43,32 +44,38 @@
         <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Plot_process.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Plot_process.py">
+      <file leaf-file-name="Config_StreamDetector.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Config_StreamDetector.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config_PointDetector.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Config_PointDetector.py">
+      <file leaf-file-name="DDM.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-              <folding>
-                <element signature="e#77#148#0" expanded="true" />
-              </folding>
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CUSUM.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/CUSUM.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,9 +109,7 @@
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/Fit_data.py" />
         <option value="$PROJECT_DIR$/Stream_AnomalyDetector/CUSUM.py" />
         <option value="$PROJECT_DIR$/Stream_AnomalyDetector/Stream_Detector.py" />
-        <option value="$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py" />
         <option value="$PROJECT_DIR$/Config_Generator.py" />
-        <option value="$PROJECT_DIR$/Config_StreamDetector.py" />
         <option value="$PROJECT_DIR$/plot_outlier_detection.py" />
         <option value="$PROJECT_DIR$/plot_oneclass.py" />
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/AnomalyScorer.py" />
@@ -126,6 +131,8 @@
         <option value="$PROJECT_DIR$/Main_Timestamp.py" />
         <option value="$PROJECT_DIR$/Plot_process.py" />
         <option value="$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.cpp" />
+        <option value="$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py" />
+        <option value="$PROJECT_DIR$/Config_StreamDetector.py" />
         <option value="$PROJECT_DIR$/Main.py" />
       </list>
     </option>
@@ -637,20 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.336">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/CUSUM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44680852">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Point_AnomalyDetector/PyiscAnomalyScorer_advanced.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65753424">
@@ -685,14 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.808">
           <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="58" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Config_StreamDetector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9529412">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -799,9 +784,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Plot_process.py">
+    <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plot_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31746033">
           <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -809,18 +802,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.cpp">
+    <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/CUSUM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config_StreamDetector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.9418886">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.036319613">
+          <caret line="58" column="43" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
           <folding>
             <element signature="e#77#88#0" expanded="true" />
           </folding>
