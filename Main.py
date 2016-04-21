@@ -16,6 +16,9 @@ import psutil
 
 __author__ = 'jiakun'
 
+import Config_seed
+Config_seed.Myseed = 119
+
 Plot_ylim =20              #ylim of the plot
 Train_incremental = False      # whether train the data incrementally
 Error_rate = 0.1            #error rate happened
@@ -28,8 +31,7 @@ Series_array = [0] * Plot_Window_Size
 Score_array = [0] * Plot_Window_Size
 Detected_array = [0] * Plot_Window_Size
 
-np.random.seed(10)
-random.seed(10)
+
 
 Gen,train_data=Config_Generator.Generate_from_simulation(
     Normal_Error = [0,poisson(1.0),poisson(1.0),poisson(1.0),poisson(1.0)],
@@ -39,7 +41,7 @@ Gen,train_data=Config_Generator.Generate_from_simulation(
     incremental=Train_incremental,
     Number_Of_Train = 10000
 )
-
+#
 # Gen,train_data = Config_Generator.Generate_from_dataset(
 #     filename = "./Data/abalone.data",
 #     delimiter = ",",
@@ -64,11 +66,19 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 #     n_neighbors = 10,
 #     algorithm = 'auto'
 # )
+#
+# anomaly_detector = Config_PointDetector.SVM_PointDetector(
+#     train_data=train_data,
+#     nu = 0.1,
+#     kernel = "poly",
+#     gamma = 0.1,
+#     coefficient = 1.0
+# )
 
 
 # Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
-#     threshold = 3.0
+#     threshold = 2.0
 # )
 
 Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
@@ -119,6 +129,8 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
            Shift_times:the total time of changes between normal and anomaly cases, Train_incremental: Whether Training the case incrementally
     :return:
     '''
+    np.random.seed(Config_seed.Myseed)
+    random.seed(Config_seed.Myseed)
     Total_error = 0      # count the number of error happened in the program
     Detected_error = 0   # count the number of detected errors from detectors
     MisDetect_error = 0  # count the number of misdetected errors from detectors
@@ -147,6 +159,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
         if len(stream_array)<number:
             number = len(stream_array)
         for i in xrange(number):
+
             Total_number = Total_number + 1
             if (if_error ==True and flag ==0):
                 print "start error!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   size    ",number
@@ -155,6 +168,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             #total_number = total_number + 1
             tmp =stream_array[i,:]
             score = anomaly_detector.anomaly_score(tmp)[0]
+            #print "score",if_error,score
             if Train_incremental == True:
                 anomaly_detector.fit_incrementally(tmp)
             anomaly_flag = 0

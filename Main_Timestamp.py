@@ -27,8 +27,9 @@ Score_array = [0] * Plot_Window_Size
 Detected_array = [0] * Plot_Window_Size
 Plot_ylim = 10
 
+import Config_seed
+Config_seed.Myseed = 119
 
-random.seed(10)
 Gen,train_data = Config_Generator.Generate_from_timestamp(
         filename = "./Data/rogue_agent_key_updown.csv",
         # filename = "./Data/art_daily_small_noise.csv",
@@ -111,6 +112,8 @@ def test_process():
     This is for timeseries data
     :return:
     '''
+    random.seed(Config_seed.Myseed)
+    np.random.seed(Config_seed.Myseed)
     global Train_incremental,Plot_Window_Size,Series_array,Score_array,Detected_array
     global Gen,train_data,anomaly_detector,Stream_Detector
     Total_error = 0      # count the number of error happened in the program

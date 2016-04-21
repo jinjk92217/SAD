@@ -6,6 +6,7 @@ email: jiakun@kth.se
 from Point_AnomalyDetector.PyiscAnomalyScorer import PyiscAnomalyScorer
 from Point_AnomalyDetector.PyiscAnomalyScorer_advanced import PyiscAnomalyScorer_advanced
 from Point_AnomalyDetector.LOFAnomalyScorer import LOFAnomalyScorer
+from Point_AnomalyDetector.SVMAnomalyScorer import SVMAnomalyScorer
 
 __author__ = 'jiakun'
 
@@ -43,5 +44,18 @@ def lof_PointDetector(train_data=[],n_neighbors = 10, algorithm='auto'):
     :return:
     '''
     Point_Detector = LOFAnomalyScorer(n_neighbors, algorithm)
+    Point_Detector.Train_PointDetector(train_data)
+    return Point_Detector
+
+
+def SVM_PointDetector(train_data=[],nu = 0.1, kernel = "rbf", gamma = 0.1, coefficient = 1.5):
+    '''
+
+    :param train_data:
+    :param n_neighbors:
+    :param algorithm:
+    :return:
+    '''
+    Point_Detector = SVMAnomalyScorer(nu = nu , kernel=kernel , gamma=gamma , coefficient=coefficient)
     Point_Detector.Train_PointDetector(train_data)
     return Point_Detector

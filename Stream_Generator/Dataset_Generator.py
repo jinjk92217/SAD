@@ -6,8 +6,6 @@ email: jiakun@kth.se
 from Generator import Generator
 import numpy as np
 from sklearn.cross_validation import train_test_split
-import random
-from scipy.stats import poisson,norm
 
 __author__ = 'jiakun'
 
@@ -28,7 +26,6 @@ class Dataset_Generator(Generator):
         self.attribute = []
         self.Normal_data_set = []
         self.Anormal_data_set = []
-
         self._read_datafile(filename,delimiter,normal_class,column)
         # self.Normal_data_set = self._addclass(self.Normal_data_set)
         # self.Anormal_data_set = self._addclass(self.Anormal_data_set)
@@ -56,10 +53,11 @@ class Dataset_Generator(Generator):
         :return: the matrix of the stream data according to the distribution and type
         '''
         Generator.Generate_Stream(self)
+        #self._UpdateSeed()
         if type == "Normal":
                 #stream = np.hstack([random.sample(list, 5)])
             #print np.hstack([random.sample(self.test,10)])
-            return np.hstack([random.sample(self.test,number>len(self.test) and len(self.test) or number)])
+            return np.hstack([self.ran.sample(self.test,number>len(self.test) and len(self.test) or number)])
             #return self.test[random.randint(0,len(self.test)-1)]
         #print np.hstack([random.sample(self.Anormal_data_set,number>len(self.test) and len(self.test) or number)])
 
@@ -85,6 +83,7 @@ class Dataset_Generator(Generator):
         :param column: the column of the attribution chosen
         :return:
         '''
+        #self._UpdateSeed()
         with open(filename, 'r') as f:
             read_data = f.read().splitlines()
             for row in read_data:
@@ -104,8 +103,9 @@ class Dataset_Generator(Generator):
         :param perceptage: seprate the data into training and testing data
         :return:
         '''
+        #self._UpdateSeed()
         #global train,test
-        self.train, self.test = train_test_split(self.Normal_data_set, test_size = perceptage)
+        self.train, self.test = train_test_split(self.Normal_data_set, test_size = perceptage,random_state = self.ran.randint(0,4294967295))
 
 
 
@@ -118,7 +118,8 @@ class Dataset_Generator(Generator):
         :return: matrix
         '''
         Generator._Generate_error_sudden(self)
-        return np.hstack([random.sample(self.Anormal_data_set,number>len(self.test) and len(self.test) or number)])
+        #self._UpdateSeed()
+        return np.hstack([self.ran.sample(self.Anormal_data_set,number>len(self.test) and len(self.test) or number)])
 
 
 
@@ -130,7 +131,8 @@ class Dataset_Generator(Generator):
         :return: matrix
         '''
         Generator._Generate_error_outlier(self)
-        return np.hstack([random.sample(self.Anormal_data_set,number>len(self.test) and len(self.test) or number)])
+        #self._UpdateSeed()
+        return np.hstack([self.ran.sample(self.Anormal_data_set,number>len(self.test) and len(self.test) or number)])
 
 
     def _Generate_error_gradual(self,number):
@@ -141,15 +143,16 @@ class Dataset_Generator(Generator):
         :return: matrix
         '''
         Generator._Generate_error_gradual(self)
+        #self._UpdateSeed()
         k = number / 20
         stream = []
         for i in range(0,5):
             if i == 0:
-                stream = np.row_stack((np.hstack([random.sample(self.test,k>len(self.test) and len(self.test) or k)]),
-                    np.hstack([random.sample(self.Anormal_data_set,k>len(self.test) and len(self.test) or k)])))
+                stream = np.row_stack((np.hstack([self.ran.sample(self.test,k>len(self.test) and len(self.test) or k)]),
+                    np.hstack([self.ran.sample(self.Anormal_data_set,k>len(self.test) and len(self.test) or k)])))
                 #print stream
             else:
-                stream = np.row_stack((stream,np.hstack([random.sample(self.test,k>len(self.test) and len(self.test) or k)]),
-                    np.hstack([random.sample(self.Anormal_data_set,k*(i+1)>len(self.test) and len(self.test) or k*(i+1))])))
-        stream = np.row_stack((stream,  np.hstack([random.sample(self.Anormal_data_set,number - k*20>len(self.test) and len(self.test) or number - k*20)])))
+                stream = np.row_stack((stream,np.hstack([self.ran.sample(self.test,k>len(self.test) and len(self.test) or k)]),
+                    np.hstack([self.ran.sample(self.Anormal_data_set,k*(i+1)>len(self.test) and len(self.test) or k*(i+1))])))
+        stream = np.row_stack((stream,  np.hstack([self.ran.sample(self.Anormal_data_set,number - k*20>len(self.test) and len(self.test) or number - k*20)])))
         return stream

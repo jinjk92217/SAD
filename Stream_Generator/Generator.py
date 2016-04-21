@@ -4,7 +4,10 @@ email: jiakun@kth.se
 :license: LGPL?
 """
 import numpy as np
-
+import sys
+sys.path.append("..")
+import Config_seed
+import random
 __author__ = 'jiakun'
 
 class Generator(object):
@@ -15,6 +18,9 @@ class Generator(object):
         :return:
         '''
         #self.error_distribution = error_distribution
+        self.Myseed =Config_seed.Myseed
+        self.ran =random
+        self.ran.seed(self.Myseed)
         self.type_error = type_error
         pass
 
@@ -61,9 +67,12 @@ class Generator(object):
         :return:
         '''
         pass
-
-
+    '''
+    def _UpdateSeed(self):
+        random.seed(self.Myseed)
+        self.Myseed = (self.Myseed + 1) % 4294967295
     # def _addclass(self,data):
     #     return np.column_stack((
     #                 [1]*len(data),data
     #             ))
+    '''

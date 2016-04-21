@@ -6,7 +6,6 @@ email: jiakun@kth.se
 from Generator import Generator
 import numpy as np
 from sklearn.cross_validation import train_test_split
-import random
 from scipy.stats import poisson,norm
 import csv
 

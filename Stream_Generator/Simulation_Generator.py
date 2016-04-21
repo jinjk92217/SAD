@@ -90,13 +90,15 @@ class Simulation_Generator(Generator):
         '''
         #self.list_distribution = list_dist
         #print self.list_distribution
+        #self._UpdateSeed()
         data = []
         for x in list_dist:
             if isinstance(x,int) or isinstance(x,float):
                 data.append([x]*number)
                 continue
             try:
-                data.append(list(x.rvs(number)))
+                #self._UpdateSeed()
+                data.append(list(x.rvs(number,random_state=self.ran.randint(0,4294967295))))
             except Exception as e:
                 print e
         return data
