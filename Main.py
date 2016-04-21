@@ -88,6 +88,14 @@ Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
 )
 
 
+Stream_Detector = Config_StreamDetector.PRAAG_StreamDetector(
+    r = 250,  
+    l = 1000,  
+    e = 0.0001,  
+    a = 30.0,
+    k = 0.01
+)
+
 
 def write_to_file(Info,size=Plot_Window_Size):
     '''

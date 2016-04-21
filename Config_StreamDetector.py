@@ -30,5 +30,17 @@ def CUSUM_StreamDetector(drift = 1, threshold = 1):
     '''
     return CUSUM(drift,threshold)
 
+def PRAAG_StreamDetector(drift = 1, threshold = 1):
+    '''
+
+    :param drift: The drift of the score that could be detected
+    e.g. 1.0
+    :param threshold: the threshold that during some period the positive and negative changes exceeds the threshold
+    e.g. 10.0
+    :return:
+
+    '''
+    return CUSUM(drift,threshold)    
+
 
 
