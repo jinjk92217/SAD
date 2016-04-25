@@ -145,12 +145,12 @@ def test_process():
         if Total_number%Plot_Window_Size == Plot_Window_Size-1:
             try:
                 current_time = time.time() - start_time
-                write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,0,0])
+                write_to_file([0,Detected_error,0,Total_number/current_time,0.0,0,0])
             except Exception as e:
                 print e
     try:
         current_time = time.time() - start_time
-        write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,0,0],size=Total_number%Plot_Window_Size)
+        write_to_file([0,Detected_error,0,Total_number/current_time,0.0,0,0],size=Total_number%Plot_Window_Size)
     except Exception as e:
         print e
 

@@ -20,7 +20,9 @@ import Config_seed
 Config_seed.Myseed = 119
 
 Plot_ylim =20              #ylim of the plot
-Train_incremental = False      # whether train the data incrementally
+Train_incremental = False      # whether train the data incrementally for point anomaly detector
+Stream_Train_incremental = True  #Whether train the data incrementally for stream anomaly detector, only when Point anomaly detector being true works
+Stream_Train_number = 10000  # if training stream is true, then the number is the training stream number
 Error_rate = 0.1            #error rate happened
 Mean_number = 200           #the mean number of cases happened during one shift
 Shift_times = 1000          #the total time of changes between normal and anomaly cases
@@ -66,21 +68,28 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 #     n_neighbors = 10,
 #     algorithm = 'auto'
 # )
-#
 
 
-Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
-    #filename = "./Stream_AnomalyDetector/C++/DDM.so",
-    threshold = 8.0,
-    alpha= 2.0,
-    beta= 3.0
-)
-
-# Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
-#     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
-#     drift = 1.0,
-#     threshold = 12.0
+# anomaly_detector = Config_PointDetector.SVM_PointDetector(
+#     train_data=train_data,
+#     nu = 0.1,
+#     kernel = "rbf",#"poly", "rbf", "sigmoid"
+#     gamma = 0.1,
+#     coefficient = 0.1#1.0
 # )
+# #
+# Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
+#     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
+#     threshold = 4.00,#15.0
+#     alpha= 2.0,
+#     beta= 3.0
+# )
+
+Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
+    #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
+    drift = 1.0,
+    threshold = 12.0
+)
 
 
 # Stream_Detector = Config_StreamDetector.PRAAG_StreamDetector(
@@ -137,7 +146,12 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
     Total_error = 0      # count the number of error happened in the program
     Detected_error = 0   # count the number of detected errors from detectors
     MisDetect_error = 0  # count the number of misdetected errors from detectors
+    radio_Detect_error = 0.0
+    radio_MisDetect_error = 0.0
     Total_number = 0     # Total number of cases
+    Delay_time = 0.0    # The sum of the delay
+    Delay_time_tmp = 0.0    #The time count of the delay
+    Delay_time_average = 0.0    #The average of the delay
     global Plot_Window_Size,Series_array,Score_array,Detected_array
     global Gen,train_data,anomaly_detector,Stream_Detector
     stream_array = []
@@ -147,11 +161,16 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
     current_time = 0
     #while 1:
     for loops in xrange(Shift_times):
-        if random.uniform(0.0, 1.0)>Error_rate:
+        if Stream_Train_incremental==True and Train_incremental == False and loops == 0:
+            number = Stream_Train_number
             if_error = False
+            Shift_times = Shift_times + 1
         else:
-            if_error = True
-        number = poisson(Mean_number).rvs(1)[0]
+            if random.uniform(0.0, 1.0)>Error_rate:
+                if_error = False
+            else:
+                if_error = True
+            number = poisson(Mean_number).rvs(1)[0]
         Detect_flag = 0
         flag = 0
         anomaly_flag = 0
@@ -161,6 +180,8 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             stream_array =np.matrix(Gen.Generate_Stream("Normal",number))
         if len(stream_array)<number:
             number = len(stream_array)
+        if if_error == True:
+            Delay_time_tmp = time.time()
         for i in xrange(number):
 
             Total_number = Total_number + 1
@@ -181,8 +202,14 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
                 if if_error ==True and Detect_flag == 0:
                     Detected_error = Detected_error + 1
                     Detect_flag = 1
+                    Delay_time = Delay_time + time.time() - Delay_time_tmp
+                    Delay_time_average = Delay_time / Detected_error
+                    if Total_error > 0:
+                        radio_Detect_error = 1.0 * Detected_error / Total_error
                 elif if_error != True:
                     MisDetect_error = MisDetect_error + 1
+                    if Total_error > 0:
+                        radio_MisDetect_error = 1.0 * MisDetect_error / Total_error + 1
                 #current_time = time.time() - start_time
                 print "Current accuracy",MisDetect_error,Detected_error,Total_error,Total_number
                 #print "Current accuracy",MisDetect_error,Detected_error,Total_error,Total_number,current_time,Total_number/current_time
@@ -192,12 +219,12 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             if Total_number%Plot_Window_Size == Plot_Window_Size-1:
                 try:
                     current_time = time.time() - start_time
-                    write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,1.0*MisDetect_error/Total_error,1.0*Detected_error/Total_error])
+                    write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_time_average,radio_MisDetect_error,radio_Detect_error])
                 except Exception as e:
                     print e
     try:
         current_time = time.time() - start_time
-        write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,1.0*MisDetect_error/Total_error,1.0*Detected_error/Total_error],size=Total_number%Plot_Window_Size)
+        write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_time_average,radio_MisDetect_error,radio_Detect_error],size=Total_number%Plot_Window_Size)
     except Exception as e:
         print e
 
