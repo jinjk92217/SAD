@@ -13,17 +13,19 @@ import Config_PointDetector
 import Config_StreamDetector
 import multiprocessing
 import psutil
+import sys
 
 __author__ = 'jiakun'
 
 import Config_seed
-Config_seed.Myseed = 119
+
 
 Plot_ylim =20              #ylim of the plot
+
 Train_incremental = False      # whether train the data incrementally for point anomaly detector
 Stream_Train_incremental = True  #Whether train the data incrementally for stream anomaly detector, only when Point anomaly detector being true works
 Stream_Train_number = 10000  # if training stream is true, then the number is the training stream number
-Error_rate = 0.1            #error rate happened
+Error_rate = 0.01            #error rate happened
 Mean_number = 200           #the mean number of cases happened during one shift
 Shift_times = 1000          #the total time of changes between normal and anomaly cases
 
@@ -32,6 +34,7 @@ Plot_Window_Size = 2000    # the plot window size
 Series_array = [0] * Plot_Window_Size
 Score_array = [0] * Plot_Window_Size
 Detected_array = [0] * Plot_Window_Size
+
 
 
 
@@ -77,7 +80,22 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 #     gamma = 0.1,
 #     coefficient = 0.1#1.0
 # )
-# #
+
+if (sys.argv[1] == "PRAAG"):
+    Stream_Detector = Config_StreamDetector.PRAAG_StreamDetector(
+        int(sys.argv[2]),
+        int(sys.argv[3]),
+        float(sys.argv[4]),
+        float(sys.argv[5]),
+        float(sys.argv[6]))
+    Config_seed.Myseed = int(sys.argv[7])
+        # r = 250,
+        # l = 1000,
+        # e = 0.0001,
+        # a = 30.0,
+        # k = 0.05
+
+
 # Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
 #     threshold = 4.00,#15.0
@@ -85,20 +103,14 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 #     beta= 3.0
 # )
 
-Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
-    #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
-    drift = 1.0,
-    threshold = 12.0
-)
 
-
-# Stream_Detector = Config_StreamDetector.PRAAG_StreamDetector(
-#     r = 250,
-#     l = 1000,
-#     e = 0.0001,
-#     a = 30.0,
-#     k = 0.01
-# )
+if (sys.argv[1] == "CUSUM"):
+    Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
+        #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
+        drift = 1.0,
+        threshold = 12.0
+    )
+    Config_seed.Myseed = int(sys.argv[2])
 
 
 def write_to_file(Info,size=Plot_Window_Size):
@@ -186,7 +198,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
 
             Total_number = Total_number + 1
             if (if_error ==True and flag ==0):
-                print "start error!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   size    ",number
+                # print "start error!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   size    ",number
                 flag = 1
                 Total_error = Total_error + 1
             #total_number = total_number + 1
@@ -198,7 +210,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             anomaly_flag = 0
             if Stream_Detector.check(score)==1:
                 anomaly_flag = Plot_ylim/2
-                print "drift",if_error,score
+                # print "drift",if_error,score
                 if if_error ==True and Detect_flag == 0:
                     Detected_error = Detected_error + 1
                     Detect_flag = 1
@@ -227,6 +239,12 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
         write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_time_average,radio_MisDetect_error,radio_Detect_error],size=Total_number%Plot_Window_Size)
     except Exception as e:
         print e
+    
+    datafile_id = open("./logs/log_"+"_".join(str(x) for x in sys.argv[1:-1]), 'a+')
+    res = " ".join(str(x) for x in [MisDetect_error,Detected_error,Total_error,Total_number/current_time,1.0*MisDetect_error/Total_error,1.0*Detected_error/Total_error, sys.argv[-1]])
+    datafile_id.write(res+"\n")
+    datafile_id.close()
+    
 
 def runplot(pid,Plot_ylim = Plot_ylim):
     '''
@@ -245,8 +263,8 @@ if __name__ == '__main__':
     process1 = multiprocessing.Process(target=test_process, args=[])
     process1.start()
     time.sleep(0.5)
-    process2 = multiprocessing.Process(target=runplot,args=[process1.pid])
-    process2.start()
+    # process2 = multiprocessing.Process(target=runplot,args=[process1.pid])
+    # process2.start()
     '''
     time.sleep(5)
     p = psutil.Process(process1.pid)
