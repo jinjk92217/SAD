@@ -17,7 +17,7 @@ import psutil
 
 __author__ = 'jiakun'
 
-Train_incremental = False      # whether train the data incrementally
+Train_incremental = True      # whether train the data incrementally
 
 
 
@@ -37,7 +37,7 @@ Gen,train_data = Config_Generator.Generate_from_timestamp(
         delimiter=",",
         del_timestamp_column=True,
         timestamp_column=0,
-        percentage=0.9,
+        percentage=0.2,
         incremental = Train_incremental
 )
 
@@ -66,17 +66,25 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 #     threshold = 1.5
 # )
 
-Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
+# Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
+#     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
+#     drift = 1.0,
+#     threshold = 12.0
+#     # drift = 0.2,
+#     # threshold = 3.0
+#     # drift = 0.1,
+#     # threshold = 0.6
+# )
+
+Stream_Detector = Config_StreamDetector.FCWM_StreamDetector(
     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
-    drift = 1.0,
-    threshold = 12.0
-    # drift = 0.2,
-    # threshold = 3.0
-    # drift = 0.1,
-    # threshold = 0.6
+    number_bin = 50,
+    ref_size=500,
+    rec_size=100,
+    maxn=10.0,
+    update_able=False,
+    Lambda=1
 )
-
-
 
 def write_to_file(Info,size=Plot_Window_Size):
     '''

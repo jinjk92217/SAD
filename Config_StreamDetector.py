@@ -4,6 +4,7 @@ email: jiakun@kth.se
 :license: LGPL?
 """
 from Stream_AnomalyDetector.DDM import DDM
+from Stream_AnomalyDetector.FCWM import FCWM
 from Stream_AnomalyDetector.CUSUM import CUSUM
 from Stream_AnomalyDetector.PRAAG import PRAAG
 
@@ -30,6 +31,19 @@ def CUSUM_StreamDetector(drift = 1, threshold = 1):
 
     '''
     return CUSUM(drift,threshold)
+
+
+def FCWM_StreamDetector(number_bin = 100,ref_size=10000,rec_size=1000,maxn=20.0, update_able=1, Lambda=1.0 ):
+    '''
+
+    :param drift: The drift of the score that could be detected
+    e.g. 1.0
+    :param threshold: the threshold that during some period the positive and negative changes exceeds the threshold
+    e.g. 10.0
+    :return:
+
+    '''
+    return FCWM(number_bin,ref_size,rec_size,maxn, update_able, Lambda)
 
 
 def PRAAG_StreamDetector(r = 100,  l = 1000,  e = 0.0001,  a = 15, k=0.05):

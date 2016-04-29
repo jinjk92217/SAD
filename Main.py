@@ -84,13 +84,23 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 #     alpha= 2.0,
 #     beta= 3.0
 # )
+#
+# Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
+#     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
+#     drift = 1.0,
+#     threshold = 12.0
+# )
 
-Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
+
+Stream_Detector = Config_StreamDetector.FCWM_StreamDetector(
     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
-    drift = 1.0,
-    threshold = 12.0
+    number_bin = 200,
+    ref_size=10000,
+    rec_size=200,
+    maxn=20.0,
+    update_able=False,
+    Lambda=2.0
 )
-
 
 # Stream_Detector = Config_StreamDetector.PRAAG_StreamDetector(
 #     r = 250,
@@ -192,7 +202,6 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             #total_number = total_number + 1
             tmp =stream_array[i,:]
             score = anomaly_detector.anomaly_score(tmp)[0]
-            #print "score",if_error,score
             if Train_incremental == True:
                 anomaly_detector.fit_incrementally(tmp)
             anomaly_flag = 0
