@@ -218,7 +218,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
                 elif if_error != True:
                     MisDetect_error = MisDetect_error + 1
                     if Total_error > 0:
-                        radio_MisDetect_error = 1.0 * MisDetect_error / Total_error + 1
+                        radio_MisDetect_error = 1.0 * MisDetect_error / Total_error
                 #current_time = time.time() - start_time
                 print "Current accuracy",MisDetect_error,Detected_error,Total_error,Total_number
                 #print "Current accuracy",MisDetect_error,Detected_error,Total_error,Total_number,current_time,Total_number/current_time
