@@ -1,4 +1,4 @@
 *.pyc
-datafile.txt
+*.txt
 /bk
 /logs
