@@ -34,6 +34,7 @@ Plot_Window_Size = 2000    # the plot window size
 Series_array = [0] * Plot_Window_Size
 Score_array = [0] * Plot_Window_Size
 Detected_array = [0] * Plot_Window_Size
+A_array = [0] * Plot_Window_Size
 
 
 
@@ -131,11 +132,14 @@ def write_to_file(Info,size=Plot_Window_Size):
     for x in Info:
         infostr = infostr +" " +str(x)
     datafile_id.write(infostr+"\n")
-    data = np.array([Series_array[:size], Score_array[:size],Detected_array[:size]])
+    # data = np.array([Series_array[:size], Score_array[:size],Detected_array[:size]])
+    data = np.array([Series_array[:size], Score_array[:size],Detected_array[:size], A_array[:size]])
     data = data.T
     #here you transpose your data, so to have it in two columns
 
-    np.savetxt(datafile_id, data, fmt=['%d','%f','%d'])
+    #tag: return A
+    # np.savetxt(datafile_id, data, fmt=['%d','%f','%d'])
+    np.savetxt(datafile_id, data, fmt=['%d','%f','%d','%f'])
     #here the ascii file is populated.
 
     datafile_id.close()
@@ -164,7 +168,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
     Delay_time = 0.0    # The sum of the delay
     Delay_time_tmp = 0.0    #The time count of the delay
     Delay_time_average = 0.0    #The average of the delay
-    global Plot_Window_Size,Series_array,Score_array,Detected_array
+    global Plot_Window_Size,Series_array,Score_array,Detected_array, A_array
     global Gen,train_data,anomaly_detector,Stream_Detector
     stream_array = []
     if_error = 0
@@ -195,7 +199,8 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
         if if_error == True:
             Delay_time_tmp = time.time()
         for i in xrange(number):
-
+            #tag: return A
+            time.sleep(0.0002)
             Total_number = Total_number + 1
             if (if_error ==True and flag ==0):
                 # print "start error!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   size    ",number
@@ -208,7 +213,14 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             if Train_incremental == True:
                 anomaly_detector.fit_incrementally(tmp)
             anomaly_flag = 0
-            if Stream_Detector.check(score)==1:
+
+            #tag: return A
+            tmpV = Stream_Detector.check(score)
+            p = tmpV[0]
+            q = tmpV[1]
+            # p = Stream_Detector.check(score)
+
+            if p ==1:
                 anomaly_flag = Plot_ylim/2
                 # print "drift",if_error,score
                 if if_error ==True and Detect_flag == 0:
@@ -228,6 +240,10 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             Series_array[Total_number%Plot_Window_Size] = Total_number
             Score_array[Total_number%Plot_Window_Size] = score
             Detected_array[Total_number%Plot_Window_Size] = anomaly_flag
+
+            #tag: return A
+            A_array[Total_number%Plot_Window_Size] = q
+            
             if Total_number%Plot_Window_Size == Plot_Window_Size-1:
                 try:
                     current_time = time.time() - start_time
@@ -263,8 +279,8 @@ if __name__ == '__main__':
     process1 = multiprocessing.Process(target=test_process, args=[])
     process1.start()
     time.sleep(0.5)
-    # process2 = multiprocessing.Process(target=runplot,args=[process1.pid])
-    # process2.start()
+    process2 = multiprocessing.Process(target=runplot,args=[process1.pid])
+    process2.start()
     '''
     time.sleep(5)
     p = psutil.Process(process1.pid)

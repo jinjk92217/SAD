@@ -7,10 +7,19 @@ plt.close()
 #fig = plt.figure()
 #ax1 = fig.add_subplot(1,1,1)
 
-fig = plt.figure(figsize=(20,10))
-ax1 = fig.add_subplot(1,1,1)
-ylim = 20.0
+#tag: return A
+TMP="PRAAG"
+
+fig = plt.figure(figsize=(30,10))
+if TMP == "PRAAG":
+    ax1 = fig.add_subplot(2,1,1,ylim=[0.0,20.0])
+    ax1_1 = fig.add_subplot(2,1,2,ylim=[0.0,30.0])
+else:
+    ax1 = fig.add_subplot(1,1,1,ylim=[0.0,20.0])
+
+ylim = 30.0
 process = 0
+## #tag: return A
 
 
 def setpid(pid):
@@ -39,6 +48,9 @@ def animate(i):
     xar = []
     yar = []
     zar = []
+
+    #tag: return A
+    aar = []
     first = 0
     info = []
     for eachLine in dataArray:
@@ -47,13 +59,27 @@ def animate(i):
                 first = 1
                 info = eachLine.split(' ')
                 continue
-            x,y,z = eachLine.split(' ')
+            #tag: return A
+            # x,y,z = eachLine.split(' ')
+            x,y,z,a = eachLine.split(' ')
             xar.append(int(x))
             yar.append(float(y))
             zar.append(int(z))
+            #tag: return A
+            aar.append(float(a))
+
     ax1.clear()
     ax1.plot(xar,yar)
     ax1.plot(xar,zar,linewidth=5,color='r')
+
+    #tag: return A
+    if TMP == "PRAAG":
+        ax1_1.clear()
+        # ax1_1.plot(xar,yar)
+        ax1_1.plot(xar,aar,linewidth=2,color='y')
+        ax1_1.plot(xar,zar,linewidth=5,color='r')
+
+
     props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
     textstr=""
     #print len(info)
@@ -62,6 +88,9 @@ def animate(i):
     ax1.text(0.05, 0.95, textstr, transform=ax1.transAxes, fontsize=14,
         verticalalignment='top', bbox=props)
     ax1.set_ylim([0.0, ylim])
+    if TMP == "PRAAG":
+        ax1_1.text(0.05, 0.95, textstr, transform=ax1_1.transAxes, fontsize=14,
+            verticalalignment='top', bbox=props)
     #time.sleep(10)
 #ani = animation.FuncAnimation(fig, animate, interval=1000)
 #plt.show()

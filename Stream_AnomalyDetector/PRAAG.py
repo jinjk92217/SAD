@@ -8,7 +8,8 @@ class PRAAG(Stream_Detector):
         self.Detector = ctypes.CDLL("./Stream_AnomalyDetector/C++/PRAAG.so")
         self.Detector.Process.argtypes = [ctypes.c_double]
         self.Detector.init.argtypes = [ctypes.c_double, ctypes.c_double, ctypes.c_double, ctypes.c_double, ctypes.c_double]
-        # self.Detector.Process.restype = ctypes.POINTER(ctypes.c_double)
+        # tag: return A
+        self.Detector.Process.restype = ctypes.POINTER(ctypes.c_double)
         self.Detector.init(r,l,e,a, k)
 
 
