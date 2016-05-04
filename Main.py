@@ -159,9 +159,9 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
     radio_Detect_error = 0.0
     radio_MisDetect_error = 0.0
     Total_number = 0     # Total number of cases
-    Delay_time = 0.0    # The sum of the delay
-    Delay_time_tmp = 0.0    #The time count of the delay
-    Delay_time_average = 0.0    #The average of the delay
+    Delay_number = 0
+    Delay_time = 0
+    Delay_average_number = 0
     global Plot_Window_Size,Series_array,Score_array,Detected_array
     global Gen,train_data,anomaly_detector,Stream_Detector
     stream_array = []
@@ -190,8 +190,6 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             stream_array =np.matrix(Gen.Generate_Stream("Normal",number))
         if len(stream_array)<number:
             number = len(stream_array)
-        if if_error == True:
-            Delay_time_tmp = time.time()
         for i in xrange(number):
 
             Total_number = Total_number + 1
@@ -211,8 +209,9 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
                 if if_error ==True and Detect_flag == 0:
                     Detected_error = Detected_error + 1
                     Detect_flag = 1
-                    Delay_time = Delay_time + time.time() - Delay_time_tmp
-                    Delay_time_average = Delay_time / Detected_error
+                    Delay_number = Delay_number + i
+                    Delay_time = Delay_time + 1
+                    Delay_average_number = 1.0 * Delay_number / Delay_time
                     if Total_error > 0:
                         radio_Detect_error = 1.0 * Detected_error / Total_error
                 elif if_error != True:
@@ -228,12 +227,12 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             if Total_number%Plot_Window_Size == Plot_Window_Size-1:
                 try:
                     current_time = time.time() - start_time
-                    write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_time_average,radio_MisDetect_error,radio_Detect_error])
+                    write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_average_number,radio_MisDetect_error,radio_Detect_error])
                 except Exception as e:
                     print e
     try:
         current_time = time.time() - start_time
-        write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_time_average,radio_MisDetect_error,radio_Detect_error],size=Total_number%Plot_Window_Size)
+        write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_average_number,radio_MisDetect_error,radio_Detect_error],size=Total_number%Plot_Window_Size)
     except Exception as e:
         print e
 
