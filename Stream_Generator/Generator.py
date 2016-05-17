@@ -32,7 +32,7 @@ class Generator(object):
         '''
         pass
 
-    def Generate_Stream(self,number=0):
+    def Generate_Stream(self,type= "Normal",number=0):
         '''
         This is the super interface for generating stream data
         :param number:number of data from stream

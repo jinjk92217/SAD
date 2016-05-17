@@ -1,0 +1,24 @@
+Install conditions:
+1. pyisc framework
+2. anaconda2
+
+Stream Generator configuration:
+1. In 'Stream_Generator' folder, create a class
+2. Fulfill the interfaces from the super class(Generator.py), which are __init__(), Generate_TrainData(), Generate_Stream()
+3. Set the parameters and configurations in 'Config_Generator.py'
+4. Add the functions in Main.py
+
+Point_AnomalyDetector configuration:
+1. In 'Point_AnoamalyDetecor' folder, create a class
+2. Fulfill the interfaces from the super class(AnomalyScorer.py), which are __init__(), Train_PointDetector(), anomaly_score(), fit_incrementally().
+3. Set the parameters and configurations in 'Config_PointDetector.py'
+4. Add the functions in Main.py
+
+Stream_AnomalyDetector configuration:
+1. In 'Stream_AnomalyDetector/C++' folder, create a C++ class
+2. Fulfill the interfaces of __init__() and check() as the format of 'DDM.cpp'.
+3. Compile the C++ with 'g++ test.cpp -fPIC -shared -o test.so' by replacing test with your particular name.
+4. In 'Stream_AnomalyDetector' folder, create a class
+5. Fulfill the interfaces from the super class(Stream_Detector.py), which are __init__() and check().
+6. Set the parameters and configurations in 'Config_StreamDetector.py'
+7. Add the functions in Main.py

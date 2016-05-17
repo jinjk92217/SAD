@@ -17,11 +17,11 @@ import psutil
 
 __author__ = 'jiakun'
 
-Train_incremental = True      # whether train the data incrementally
+Train_incremental = False      # whether train the data incrementally
 
 
 
-Plot_Window_Size = 8000    # the plot window size
+Plot_Window_Size = 3000    # the plot window size
 Series_array = [0] * Plot_Window_Size
 Score_array = [0] * Plot_Window_Size
 Detected_array = [0] * Plot_Window_Size
@@ -65,7 +65,7 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
 #     threshold = 1.5
 # )
-
+#
 # Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
 #     drift = 1.0,
@@ -79,8 +79,8 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 Stream_Detector = Config_StreamDetector.FCWM_StreamDetector(
     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
     number_bin = 50,
-    ref_size=500,
-    rec_size=100,
+    ref_size=100,
+    rec_size=20,
     maxn=10.0,
     update_able=False,
     Lambda=1
@@ -138,7 +138,6 @@ def test_process():
         if tmp == []:
             break
         score = anomaly_detector.anomaly_score(tmp)[0]
-        # print "score",tmp
         if Train_incremental == True:
             anomaly_detector.fit_incrementally(tmp)
         anomaly_flag = 0
