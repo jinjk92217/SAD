@@ -20,10 +20,10 @@ import Config_seed
 Config_seed.Myseed = 119
 
 Plot_ylim =20              #ylim of the plot
-Train_incremental = False      # whether train the data incrementally for point anomaly detector
+Train_incremental = True      # whether train the data incrementally for point anomaly detector
 Stream_Train_incremental = True  #Whether train the data incrementally for stream anomaly detector, only when Point anomaly detector being true works
 Stream_Train_number = 10000  # if training stream is true, then the number is the training stream number
-Error_rate = 0.05            #error rate happened
+Error_rate = 0.01            #error rate happened
 Mean_number = 200           #the mean number of cases happened during one shift
 Shift_times = 1000          #the total time of changes between normal and anomaly cases
 
@@ -53,7 +53,6 @@ Gen,train_data=Config_Generator.Generate_from_simulation(
 #     incremental= Train_incremental,
 #     percentage = 0.7
 # )
-
 anomaly_detector = Config_PointDetector.pyisc_PointDetector(
     train_data= train_data,
     #models = [],

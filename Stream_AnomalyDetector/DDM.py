@@ -29,4 +29,6 @@ class DDM(Stream_Detector):
         :return: Whether a drift detected
         '''
         Stream_Detector.check(self)
+        if score == float('inf'):
+            return self.Detector.Process(99999999)
         return self.Detector.Process(score)

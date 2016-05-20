@@ -2,105 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2eb71ea0-361c-4dda-8795-1d65f7139204" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.so" afterPath="$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.so" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1AnomalyScorer_1_1AnomalyScorer.pdf" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1AnomalyScorer_1_1AnomalyScorer.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1LOFAnomalyScorer_1_1LOFAnomalyScorer.pdf" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1LOFAnomalyScorer_1_1LOFAnomalyScorer.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer_1_1PyiscAnomalyScorer.pdf" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer_1_1PyiscAnomalyScorer.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer__advanced_1_1PyiscAnomalyScorer__advanced.pdf" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer__advanced_1_1PyiscAnomalyScorer__advanced.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__AnomalyDetector_1_1CUSUM_1_1CUSUM.pdf" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__AnomalyDetector_1_1CUSUM_1_1CUSUM.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__AnomalyDetector_1_1DDM_1_1DDM.pdf" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__AnomalyDetector_1_1DDM_1_1DDM.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__AnomalyDetector_1_1Stream__Detector_1_1Stream__Detector.pdf" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__AnomalyDetector_1_1Stream__Detector_1_1Stream__Detector.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Dataset__Generator_1_1Dataset__Generator.pdf" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Dataset__Generator_1_1Dataset__Generator.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Generator_1_1Generator.pdf" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Generator_1_1Generator.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator.pdf" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Timestamp__Dataset__Generator_1_1Timestamp__Dataset__Generator.pdf" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Timestamp__Dataset__Generator_1_1Timestamp__Dataset__Generator.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Doxyfile" afterPath="$PROJECT_DIR$/Doxyfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.py" afterPath="$PROJECT_DIR$/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.cpp" afterPath="$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stream_AnomalyDetector/CUSUM.py" afterPath="$PROJECT_DIR$/Stream_AnomalyDetector/CUSUM.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py" afterPath="$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stream_AnomalyDetector/FCWM.py" afterPath="$PROJECT_DIR$/Stream_AnomalyDetector/FCWM.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datafile.txt" afterPath="$PROJECT_DIR$/datafile.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/annotated.html" afterPath="$PROJECT_DIR$/html/annotated.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1AnomalyScorer_1_1AnomalyScorer-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1AnomalyScorer_1_1AnomalyScorer-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1AnomalyScorer_1_1AnomalyScorer.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1AnomalyScorer_1_1AnomalyScorer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1Fit__data_1_1Fit__data-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1Fit__data_1_1Fit__data-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1Fit__data_1_1Fit__data.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1Fit__data_1_1Fit__data.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1LOFAnomalyScorer_1_1LOFAnomalyScorer-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1LOFAnomalyScorer_1_1LOFAnomalyScorer-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1LOFAnomalyScorer_1_1LOFAnomalyScorer.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1LOFAnomalyScorer_1_1LOFAnomalyScorer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer_1_1PyiscAnomalyScorer-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer_1_1PyiscAnomalyScorer-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer_1_1PyiscAnomalyScorer.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer_1_1PyiscAnomalyScorer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer__advanced_1_1PyiscAnomalyScorer__advanced-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer__advanced_1_1PyiscAnomalyScorer__advanced-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer__advanced_1_1PyiscAnomalyScorer__advanced.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer__advanced_1_1PyiscAnomalyScorer__advanced.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__AnomalyDetector_1_1CUSUM_1_1CUSUM-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__AnomalyDetector_1_1CUSUM_1_1CUSUM-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__AnomalyDetector_1_1CUSUM_1_1CUSUM.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__AnomalyDetector_1_1CUSUM_1_1CUSUM.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__AnomalyDetector_1_1DDM_1_1DDM-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__AnomalyDetector_1_1DDM_1_1DDM-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__AnomalyDetector_1_1DDM_1_1DDM.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__AnomalyDetector_1_1DDM_1_1DDM.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__AnomalyDetector_1_1Stream__Detector_1_1Stream__Detector-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__AnomalyDetector_1_1Stream__Detector_1_1Stream__Detector-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__AnomalyDetector_1_1Stream__Detector_1_1Stream__Detector.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__AnomalyDetector_1_1Stream__Detector_1_1Stream__Detector.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Dataset__Generator_1_1Dataset__Generator-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Dataset__Generator_1_1Dataset__Generator-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Dataset__Generator_1_1Dataset__Generator.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Dataset__Generator_1_1Dataset__Generator.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Generator_1_1Generator-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Generator_1_1Generator-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Generator_1_1Generator.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Generator_1_1Generator.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Timestamp__Dataset__Generator_1_1Timestamp__Dataset__Generator-members.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Timestamp__Dataset__Generator_1_1Timestamp__Dataset__Generator-members.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Timestamp__Dataset__Generator_1_1Timestamp__Dataset__Generator.html" afterPath="$PROJECT_DIR$/html/classSAD_1_1Stream__Generator_1_1Timestamp__Dataset__Generator_1_1Timestamp__Dataset__Generator.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/classes.html" afterPath="$PROJECT_DIR$/html/classes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/functions.html" afterPath="$PROJECT_DIR$/html/functions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/functions_func.html" afterPath="$PROJECT_DIR$/html/functions_func.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/hierarchy.html" afterPath="$PROJECT_DIR$/html/hierarchy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/namespaceSAD_1_1Config__PointDetector.html" afterPath="$PROJECT_DIR$/html/namespaceSAD_1_1Config__PointDetector.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/namespaceSAD_1_1Config__StreamDetector.html" afterPath="$PROJECT_DIR$/html/namespaceSAD_1_1Config__StreamDetector.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/namespaceSAD_1_1Main.html" afterPath="$PROJECT_DIR$/html/namespaceSAD_1_1Main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/namespaceSAD_1_1Main__Timestamp.html" afterPath="$PROJECT_DIR$/html/namespaceSAD_1_1Main__Timestamp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/namespacemembers.html" afterPath="$PROJECT_DIR$/html/namespacemembers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/namespacemembers_func.html" afterPath="$PROJECT_DIR$/html/namespacemembers_func.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/namespaces.html" afterPath="$PROJECT_DIR$/html/namespaces.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/all_0.js" afterPath="$PROJECT_DIR$/html/search/all_0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/all_1.js" afterPath="$PROJECT_DIR$/html/search/all_1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/all_2.js" afterPath="$PROJECT_DIR$/html/search/all_2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/all_3.js" afterPath="$PROJECT_DIR$/html/search/all_3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/all_4.js" afterPath="$PROJECT_DIR$/html/search/all_4.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/all_5.js" afterPath="$PROJECT_DIR$/html/search/all_5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/all_7.js" afterPath="$PROJECT_DIR$/html/search/all_7.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/all_9.js" afterPath="$PROJECT_DIR$/html/search/all_9.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/all_a.js" afterPath="$PROJECT_DIR$/html/search/all_a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/classes_3.js" afterPath="$PROJECT_DIR$/html/search/classes_3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/classes_6.js" afterPath="$PROJECT_DIR$/html/search/classes_6.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/classes_7.js" afterPath="$PROJECT_DIR$/html/search/classes_7.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/functions_0.js" afterPath="$PROJECT_DIR$/html/search/functions_0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/functions_1.js" afterPath="$PROJECT_DIR$/html/search/functions_1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/functions_2.js" afterPath="$PROJECT_DIR$/html/search/functions_2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/functions_3.js" afterPath="$PROJECT_DIR$/html/search/functions_3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/functions_4.js" afterPath="$PROJECT_DIR$/html/search/functions_4.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/functions_5.js" afterPath="$PROJECT_DIR$/html/search/functions_5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/functions_7.js" afterPath="$PROJECT_DIR$/html/search/functions_7.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/functions_9.js" afterPath="$PROJECT_DIR$/html/search/functions_9.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/functions_a.js" afterPath="$PROJECT_DIR$/html/search/functions_a.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/namespaces_0.js" afterPath="$PROJECT_DIR$/html/search/namespaces_0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/search/searchdata.js" afterPath="$PROJECT_DIR$/html/search/searchdata.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/annotated.tex" afterPath="$PROJECT_DIR$/latex/annotated.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1AnomalyScorer_1_1AnomalyScorer.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1AnomalyScorer_1_1AnomalyScorer.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1Fit__data_1_1Fit__data.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1Fit__data_1_1Fit__data.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1LOFAnomalyScorer_1_1LOFAnomalyScorer.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1LOFAnomalyScorer_1_1LOFAnomalyScorer.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer_1_1PyiscAnomalyScorer.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer_1_1PyiscAnomalyScorer.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer__advanced_1_1PyiscAnomalyScorer__advanced.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer__advanced_1_1PyiscAnomalyScorer__advanced.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Point__AnomalyDetector_1_1lof_1_1LOF.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__AnomalyDetector_1_1CUSUM_1_1CUSUM.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__AnomalyDetector_1_1CUSUM_1_1CUSUM.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__AnomalyDetector_1_1DDM_1_1DDM.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__AnomalyDetector_1_1DDM_1_1DDM.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__AnomalyDetector_1_1Stream__Detector_1_1Stream__Detector.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__AnomalyDetector_1_1Stream__Detector_1_1Stream__Detector.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Dataset__Generator_1_1Dataset__Generator.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Dataset__Generator_1_1Dataset__Generator.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Generator_1_1Generator.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Generator_1_1Generator.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Simulation__Generator_1_1Simulation__Generator.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Timestamp__Dataset__Generator_1_1Timestamp__Dataset__Generator.tex" afterPath="$PROJECT_DIR$/latex/classSAD_1_1Stream__Generator_1_1Timestamp__Dataset__Generator_1_1Timestamp__Dataset__Generator.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/hierarchy.tex" afterPath="$PROJECT_DIR$/latex/hierarchy.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/namespaceSAD_1_1Config__PointDetector.tex" afterPath="$PROJECT_DIR$/latex/namespaceSAD_1_1Config__PointDetector.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/namespaceSAD_1_1Config__StreamDetector.tex" afterPath="$PROJECT_DIR$/latex/namespaceSAD_1_1Config__StreamDetector.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/namespaceSAD_1_1Main.tex" afterPath="$PROJECT_DIR$/latex/namespaceSAD_1_1Main.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/namespaceSAD_1_1Main__Timestamp.tex" afterPath="$PROJECT_DIR$/latex/namespaceSAD_1_1Main__Timestamp.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/namespaces.tex" afterPath="$PROJECT_DIR$/latex/namespaces.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/latex/refman.tex" afterPath="$PROJECT_DIR$/latex/refman.tex" />
     </list>
     <ignored path="SAD.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -121,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5412668">
-              <caret line="220" column="83" selection-start-line="220" selection-start-column="83" selection-end-line="220" selection-end-column="83" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding>
                 <element signature="e#77#88#0" expanded="true" />
               </folding>
@@ -133,22 +40,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DDM.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.cpp">
+      <file leaf-file-name="CUSUM.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/CUSUM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.85281384">
+              <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DDM.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py">
+      <file leaf-file-name="Config_PointDetector.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Config_PointDetector.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="16" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="16" />
-              <folding />
+              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+              <folding>
+                <element signature="e#77#148#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -157,7 +66,27 @@
         <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/FCWM.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="13" />
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PyiscAnomalyScorer_advanced.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Point_AnomalyDetector/PyiscAnomalyScorer_advanced.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="60" column="63" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PyiscAnomalyScorer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Point_AnomalyDetector/PyiscAnomalyScorer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -190,15 +119,12 @@
       <list>
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/lof.py" />
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/Fit_data.py" />
-        <option value="$PROJECT_DIR$/Stream_AnomalyDetector/CUSUM.py" />
         <option value="$PROJECT_DIR$/Stream_AnomalyDetector/Stream_Detector.py" />
         <option value="$PROJECT_DIR$/Config_Generator.py" />
         <option value="$PROJECT_DIR$/plot_outlier_detection.py" />
         <option value="$PROJECT_DIR$/plot_oneclass.py" />
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/AnomalyScorer.py" />
-        <option value="$PROJECT_DIR$/Point_AnomalyDetector/PyiscAnomalyScorer.py" />
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/LOFAnomalyScorer.py" />
-        <option value="$PROJECT_DIR$/Point_AnomalyDetector/PyiscAnomalyScorer_advanced.py" />
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/__init__.py" />
         <option value="$PROJECT_DIR$/Stream_AnomalyDetector/__init__.py" />
         <option value="$PROJECT_DIR$/Stream_Generator/__init__.py" />
@@ -207,21 +133,24 @@
         <option value="$PROJECT_DIR$/Stream_Generator/Timestamp_Dataset_Generator.py" />
         <option value="$PROJECT_DIR$/Stream_Generator/Simulation_Generator.py" />
         <option value="$PROJECT_DIR$/Stream_Generator/Dataset_Generator.py" />
-        <option value="$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py" />
-        <option value="$PROJECT_DIR$/Config_PointDetector.py" />
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/SVM.py" />
         <option value="$PROJECT_DIR$/Plot_process.py" />
         <option value="$PROJECT_DIR$/Stream_AnomalyDetector/C++/PL.cpp" />
         <option value="$PROJECT_DIR$/Stream_AnomalyDetector/C++/CUSUM.cpp" />
         <option value="$PROJECT_DIR$/Config_StreamDetector.py" />
-        <option value="$PROJECT_DIR$/Stream_AnomalyDetector/FCWM.py" />
         <option value="$PROJECT_DIR$/Stream_AnomalyDetector/C++/FCWM.cpp" />
         <option value="$PROJECT_DIR$/Stream_Generator/Generator.py" />
         <option value="$PROJECT_DIR$/Main_Timestamp.py" />
         <option value="$PROJECT_DIR$/Point_AnomalyDetector/SVMAnomalyScorer.py" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/Stream_AnomalyDetector/C++/DDM.cpp" />
+        <option value="$PROJECT_DIR$/Config_PointDetector.py" />
+        <option value="$PROJECT_DIR$/Point_AnomalyDetector/PyiscAnomalyScorer_advanced.py" />
+        <option value="$PROJECT_DIR$/Point_AnomalyDetector/PyiscAnomalyScorer.py" />
+        <option value="$PROJECT_DIR$/Stream_AnomalyDetector/FCWM.py" />
         <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py" />
+        <option value="$PROJECT_DIR$/Stream_AnomalyDetector/CUSUM.py" />
       </list>
     </option>
   </component>
@@ -285,24 +214,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Stream_AnomalyDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SAD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SAD" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Stream_AnomalyDetector" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="C++" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -574,7 +485,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.398773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1595092" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -603,16 +514,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding>
-            <element signature="e#77#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Point_AnomalyDetector/SVMAnomalyScorer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -761,13 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Point_AnomalyDetector/PyiscAnomalyScorer_advanced.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65753424">
-          <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Point_AnomalyDetector/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -796,13 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/CUSUM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49473685">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Plot_process.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1812227">
@@ -821,13 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Config_PointDetector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0327511">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -873,13 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Config_Generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7088">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Main_Timestamp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.328">
@@ -901,22 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/FCWM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Stream_Generator/Simulation_Generator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.744">
@@ -928,13 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.672">
           <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Point_AnomalyDetector/PyiscAnomalyScorer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7392">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -977,13 +827,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../anaconda2/lib/python2.7/site-packages/_pyisc_modules/AnomalyDetector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33205375">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config_Generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6909789">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config_PointDetector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding>
+            <element signature="e#77#148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Point_AnomalyDetector/PyiscAnomalyScorer_advanced.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="63" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Point_AnomalyDetector/PyiscAnomalyScorer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="45" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/FCWM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/DDM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83766234">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5412668">
-          <caret line="220" column="83" selection-start-line="220" selection-start-column="83" selection-end-line="220" selection-end-column="83" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding>
             <element signature="e#77#88#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Stream_AnomalyDetector/CUSUM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85281384">
+          <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
