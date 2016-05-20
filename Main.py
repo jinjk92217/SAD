@@ -23,7 +23,7 @@ Plot_ylim =20              #ylim of the plot
 Train_incremental = True      # whether train the data incrementally for point anomaly detector
 Stream_Train_incremental = True  #Whether train the data incrementally for stream anomaly detector, only when Point anomaly detector being true works
 Stream_Train_number = 10000  # if training stream is true, then the number is the training stream number
-Error_rate = 0.01            #error rate happened
+Error_rate = 0.3            #error rate happened
 Mean_number = 200           #the mean number of cases happened during one shift
 Shift_times = 1000          #the total time of changes between normal and anomaly cases
 
@@ -77,12 +77,12 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 #     coefficient = 0.1#1.0
 # )
 # #
-# Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
-#     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
-#     threshold = 5.00,#15.0
-#     alpha= 2.0,
-#     beta= 3.0
-# )
+Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
+    #filename = "./Stream_AnomalyDetector/C++/DDM.so",
+    threshold = 4.00,#15.0
+    alpha= 2.0,
+    beta= 3.0
+)
 
 # Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
@@ -90,16 +90,16 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 #     threshold = 12.0
 # )
 
-
-Stream_Detector = Config_StreamDetector.FCWM_StreamDetector(
-    #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
-    number_bin = 200,
-    ref_size=10000,
-    rec_size=200,
-    maxn=20.0,
-    update_able=False,
-    Lambda=2.0
-)
+#
+# Stream_Detector = Config_StreamDetector.FCWM_StreamDetector(
+#     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
+#     number_bin = 200,
+#     ref_size=10000,
+#     rec_size=200,
+#     maxn=20.0,
+#     update_able=False,
+#     Lambda=2.0
+# )
 
 # Stream_Detector = Config_StreamDetector.PRAAG_StreamDetector(
 #     r = 250,
@@ -170,7 +170,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
     current_time = 0
     #while 1:
     for loops in xrange(Shift_times):
-        if Stream_Train_incremental==True and Train_incremental == False and loops == 0:
+        if Stream_Train_incremental==True and loops == 0:
             number = Stream_Train_number
             if_error = False
             Shift_times = Shift_times + 1
@@ -230,6 +230,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
                     write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_average_number,radio_MisDetect_error,radio_Detect_error])
                 except Exception as e:
                     print e
+            time.sleep(0.0001)
     try:
         current_time = time.time() - start_time
         write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_average_number,radio_MisDetect_error,radio_Detect_error],size=Total_number%Plot_Window_Size)
