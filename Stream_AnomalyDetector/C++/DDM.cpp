@@ -39,7 +39,7 @@ extern "C" {
 			p_i = p_i - p_i / i;
 		s_i = compute_si(p_i,i);
 		i = i + 1;
-		if(i>30 || 1==1){
+		if(i>30){
 			//printf("aaa %f %f %f %f\n",p_i,p_min,s_i,s_min);
 			if( p_i + s_i <= ps_min ){
 				p_min = p_i;

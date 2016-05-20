@@ -97,6 +97,8 @@ Functions</h2></td></tr>
 <tr class="separator:a4a47fd76139083b7d9f41d3997edf3f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a420441441318e4c5c12031e2e19dce98"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSAD_1_1Config__PointDetector.html#a420441441318e4c5c12031e2e19dce98">lof_PointDetector</a> (train_data=[], n_neighbors=10, algorithm='auto')</td></tr>
 <tr class="separator:a420441441318e4c5c12031e2e19dce98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a582467493e610c8f0ff0426f8a9172fe"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSAD_1_1Config__PointDetector.html#a582467493e610c8f0ff0426f8a9172fe">SVM_PointDetector</a> (train_data=[], nu=0.1, kernel=&quot;rbf&quot;, gamma=0.1, coefficient=1.5)</td></tr>
+<tr class="separator:a582467493e610c8f0ff0426f8a9172fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">:copyright: (c) 2016 Jiakun Jin
@@ -180,6 +182,54 @@ e.g. [pyisc.P_Gaussian(1),pyisc.P_Gaussian(2),pyisc.P_Poisson(3,0),pyisc.P_Poiss
 :param incremental: Whether they are training incremental or not
 :param test_distribution: If there is training phase, the test_distribution is the list used for testing the best distribution
 e.g.['norm']
+:return:
+</pre> 
+</div>
+</div>
+<a class="anchor" id="a582467493e610c8f0ff0426f8a9172fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def SAD.Config_PointDetector.SVM_PointDetector </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>train_data</em> = <code>[]</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>nu</em> = <code>0.1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kernel</em> = <code>&quot;rbf&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>gamma</em> = <code>0.1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>coefficient</em> = <code>1.5</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">:param train_data:
+:param n_neighbors:
+:param algorithm:
 :return:
 </pre> 
 </div>

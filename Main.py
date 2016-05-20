@@ -23,7 +23,7 @@ Plot_ylim =20              #ylim of the plot
 Train_incremental = False      # whether train the data incrementally for point anomaly detector
 Stream_Train_incremental = True  #Whether train the data incrementally for stream anomaly detector, only when Point anomaly detector being true works
 Stream_Train_number = 10000  # if training stream is true, then the number is the training stream number
-Error_rate = 0.1            #error rate happened
+Error_rate = 0.05            #error rate happened
 Mean_number = 200           #the mean number of cases happened during one shift
 Shift_times = 1000          #the total time of changes between normal and anomaly cases
 
@@ -80,11 +80,11 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 # #
 # Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
-#     threshold = 4.00,#15.0
+#     threshold = 5.00,#15.0
 #     alpha= 2.0,
 #     beta= 3.0
 # )
-#
+
 # Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
 #     drift = 1.0,
@@ -214,6 +214,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
                     Delay_average_number = 1.0 * Delay_number / Delay_time
                     if Total_error > 0:
                         radio_Detect_error = 1.0 * Detected_error / Total_error
+                        radio_MisDetect_error = 1.0 * MisDetect_error / Total_error
                 elif if_error != True:
                     MisDetect_error = MisDetect_error + 1
                     if Total_error > 0:

@@ -12,10 +12,19 @@ def \hyperlink{namespaceSAD_1_1Main_a03f50b3953bf494084aa0db03de3106e}{runplot} 
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+{\bfseries Myseed}\hypertarget{namespaceSAD_1_1Main_a0625a68680fe476e3a38c55669ec49ca}{}\label{namespaceSAD_1_1Main_a0625a68680fe476e3a38c55669ec49ca}
+
+\item 
 int {\bfseries Plot\+\_\+ylim} = 20\hypertarget{namespaceSAD_1_1Main_a194be1cda3175225c22109dba23a4142}{}\label{namespaceSAD_1_1Main_a194be1cda3175225c22109dba23a4142}
 
 \item 
 bool {\bfseries Train\+\_\+incremental} = False\hypertarget{namespaceSAD_1_1Main_a98ae0dd0686308bdb555c8867a9c347d}{}\label{namespaceSAD_1_1Main_a98ae0dd0686308bdb555c8867a9c347d}
+
+\item 
+bool {\bfseries Stream\+\_\+\+Train\+\_\+incremental} = True\hypertarget{namespaceSAD_1_1Main_a335e93ce2f9a4ade5ee88c597af6c7a9}{}\label{namespaceSAD_1_1Main_a335e93ce2f9a4ade5ee88c597af6c7a9}
+
+\item 
+int {\bfseries Stream\+\_\+\+Train\+\_\+number} = 10000\hypertarget{namespaceSAD_1_1Main_ab1a2a4c51008325c8d35a1c46d03b99a}{}\label{namespaceSAD_1_1Main_ab1a2a4c51008325c8d35a1c46d03b99a}
 
 \item 
 float {\bfseries Error\+\_\+rate} = 0.\+1\hypertarget{namespaceSAD_1_1Main_a5456dbfce839159d79b2e884585405d2}{}\label{namespaceSAD_1_1Main_a5456dbfce839159d79b2e884585405d2}
@@ -149,9 +158,13 @@ There will be around Error_rate percentage error occurs
 \subsubsection[{\texorpdfstring{Stream\+\_\+\+Detector}{Stream_Detector}}]{\setlength{\rightskip}{0pt plus 5cm}S\+A\+D.\+Main.\+Stream\+\_\+\+Detector}\hypertarget{namespaceSAD_1_1Main_adedbb4deb28e6f7b98f42f21f1330352}{}\label{namespaceSAD_1_1Main_adedbb4deb28e6f7b98f42f21f1330352}
 {\bfseries Initial value\+:}
 \begin{DoxyCode}
-1 = Config\_StreamDetector.CUSUM\_StreamDetector(
+1 = Config\_StreamDetector.FCWM\_StreamDetector(
 2     \textcolor{comment}{#filename = "./Stream\_AnomalyDetector/C++/CUSUM.so",}
-3     drift = 1.0,
-4     threshold = 12.0
-5 )
+3     number\_bin = 200,
+4     ref\_size=10000,
+5     rec\_size=200,
+6     maxn=20.0,
+7     update\_able=\textcolor{keyword}{False},
+8     Lambda=2.0
+9 )
 \end{DoxyCode}

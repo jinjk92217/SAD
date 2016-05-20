@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['test_5fprocess',['test_process',['../namespaceSAD_1_1Main.html#ac7af90e87d6b97c34a6c0a61050f7bbb',1,'SAD.Main.test_process()'],['../namespaceSAD_1_1Main__Timestamp.html#a8238248c631be66c271ea6a591b587b4',1,'SAD.Main_Timestamp.test_process()']]],
-  ['train_5fpointdetector',['Train_PointDetector',['../classSAD_1_1Point__AnomalyDetector_1_1AnomalyScorer_1_1AnomalyScorer.html#a22e40f7116e20bd61b81510970266151',1,'SAD.Point_AnomalyDetector.AnomalyScorer.AnomalyScorer.Train_PointDetector()'],['../classSAD_1_1Point__AnomalyDetector_1_1LOFAnomalyScorer_1_1LOFAnomalyScorer.html#a1d4a77f8866cca6ed19db1f92ae13fd0',1,'SAD.Point_AnomalyDetector.LOFAnomalyScorer.LOFAnomalyScorer.Train_PointDetector()'],['../classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer_1_1PyiscAnomalyScorer.html#ae27cbcb8c835a0fa016b9eafa4045052',1,'SAD.Point_AnomalyDetector.PyiscAnomalyScorer.PyiscAnomalyScorer.Train_PointDetector()'],['../classSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer__advanced_1_1PyiscAnomalyScorer__advanced.html#aef70b902dc9c5df150eecd5c0b1c3916',1,'SAD.Point_AnomalyDetector.PyiscAnomalyScorer_advanced.PyiscAnomalyScorer_advanced.Train_PointDetector()']]]
+  ['svm_5fpointdetector',['SVM_PointDetector',['../namespaceSAD_1_1Config__PointDetector.html#a582467493e610c8f0ff0426f8a9172fe',1,'SAD::Config_PointDetector']]]
 ];

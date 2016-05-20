@@ -93,10 +93,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a833140ad9e4c0fb8a57ca3f3028c579e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSAD_1_1Config__StreamDetector.html#a833140ad9e4c0fb8a57ca3f3028c579e">DDM_StreamDetector</a> (threshold=1)</td></tr>
-<tr class="separator:a833140ad9e4c0fb8a57ca3f3028c579e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fe66fa1ba56758d362751b650b527c9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSAD_1_1Config__StreamDetector.html#a8fe66fa1ba56758d362751b650b527c9">DDM_StreamDetector</a> (threshold=1, alpha=2.0, beta=3.0)</td></tr>
+<tr class="separator:a8fe66fa1ba56758d362751b650b527c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b6e5608d3fa1ec9d349f060c106fe37"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSAD_1_1Config__StreamDetector.html#a9b6e5608d3fa1ec9d349f060c106fe37">CUSUM_StreamDetector</a> (drift=1, threshold=1)</td></tr>
 <tr class="separator:a9b6e5608d3fa1ec9d349f060c106fe37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e6604df8a55cae85d05d26ffb65ae3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSAD_1_1Config__StreamDetector.html#ac6e6604df8a55cae85d05d26ffb65ae3">FCWM_StreamDetector</a> (number_bin=100, ref_size=10000, rec_size=1000, maxn=20.0, update_able=1, Lambda=1.0)</td></tr>
+<tr class="separator:ac6e6604df8a55cae85d05d26ffb65ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a883b97a1c93b25432bae9e26bf93aad9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSAD_1_1Config__StreamDetector.html#a883b97a1c93b25432bae9e26bf93aad9">PRAAG_StreamDetector</a> (r=100, l=1000, e=0.0001, a=15, k=0.05)</td></tr>
+<tr class="separator:a883b97a1c93b25432bae9e26bf93aad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">:copyright: (c) 2016 Jiakun Jin
@@ -133,7 +137,7 @@ e.g. 10.0
 :return:</pre> 
 </div>
 </div>
-<a class="anchor" id="a833140ad9e4c0fb8a57ca3f3028c579e"></a>
+<a class="anchor" id="a8fe66fa1ba56758d362751b650b527c9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -141,8 +145,24 @@ e.g. 10.0
           <td class="memname">def SAD.Config_StreamDetector.DDM_StreamDetector </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>threshold</em> = <code>1</code></td><td>)</td>
+          <td class="paramname"><em>threshold</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>alpha</em> = <code>2.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>beta</em> = <code>3.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -150,6 +170,109 @@ e.g. 10.0
 e.g. 3.0
 :return:
 </pre> 
+</div>
+</div>
+<a class="anchor" id="ac6e6604df8a55cae85d05d26ffb65ae3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def SAD.Config_StreamDetector.FCWM_StreamDetector </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>number_bin</em> = <code>100</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ref_size</em> = <code>10000</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>rec_size</em> = <code>1000</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maxn</em> = <code>20.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>update_able</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>Lambda</em> = <code>1.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">:param drift: The drift of the score that could be detected
+e.g. 1.0
+:param threshold: the threshold that during some period the positive and negative changes exceeds the threshold
+e.g. 10.0
+:return:</pre> 
+</div>
+</div>
+<a class="anchor" id="a883b97a1c93b25432bae9e26bf93aad9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def SAD.Config_StreamDetector.PRAAG_StreamDetector </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>r</em> = <code>100</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>l</em> = <code>1000</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>e</em> = <code>0.0001</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>a</em> = <code>15</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>k</em> = <code>0.05</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">:param r: Size of recent window(small one)
+:param l: Size of reference window(large one)
+:param e: precision, needed only if using GK quantile estimation
+:param a: thresthold of negative log probability value
+:param k: thresthold percentage of considering a window abnormal
+:return:</pre> 
 </div>
 </div>
 </div><!-- contents -->

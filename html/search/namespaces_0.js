@@ -7,6 +7,7 @@ var searchData=
   ['cusum',['CUSUM',['../namespaceSAD_1_1Stream__AnomalyDetector_1_1CUSUM.html',1,'SAD::Stream_AnomalyDetector']]],
   ['dataset_5fgenerator',['Dataset_Generator',['../namespaceSAD_1_1Stream__Generator_1_1Dataset__Generator.html',1,'SAD::Stream_Generator']]],
   ['ddm',['DDM',['../namespaceSAD_1_1Stream__AnomalyDetector_1_1DDM.html',1,'SAD::Stream_AnomalyDetector']]],
+  ['fcwm',['FCWM',['../namespaceSAD_1_1Stream__AnomalyDetector_1_1FCWM.html',1,'SAD::Stream_AnomalyDetector']]],
   ['fit_5fdata',['Fit_data',['../namespaceSAD_1_1Point__AnomalyDetector_1_1Fit__data.html',1,'SAD::Point_AnomalyDetector']]],
   ['generator',['Generator',['../namespaceSAD_1_1Stream__Generator_1_1Generator.html',1,'SAD::Stream_Generator']]],
   ['lof',['lof',['../namespaceSAD_1_1Point__AnomalyDetector_1_1lof.html',1,'SAD::Point_AnomalyDetector']]],
@@ -17,5 +18,6 @@ var searchData=
   ['pyiscanomalyscorer_5fadvanced',['PyiscAnomalyScorer_advanced',['../namespaceSAD_1_1Point__AnomalyDetector_1_1PyiscAnomalyScorer__advanced.html',1,'SAD::Point_AnomalyDetector']]],
   ['simulation_5fgenerator',['Simulation_Generator',['../namespaceSAD_1_1Stream__Generator_1_1Simulation__Generator.html',1,'SAD::Stream_Generator']]],
   ['stream_5fdetector',['Stream_Detector',['../namespaceSAD_1_1Stream__AnomalyDetector_1_1Stream__Detector.html',1,'SAD::Stream_AnomalyDetector']]],
+  ['svmanomalyscorer',['SVMAnomalyScorer',['../namespaceSAD_1_1Point__AnomalyDetector_1_1SVMAnomalyScorer.html',1,'SAD::Point_AnomalyDetector']]],
   ['timestamp_5fdataset_5fgenerator',['Timestamp_Dataset_Generator',['../namespaceSAD_1_1Stream__Generator_1_1Timestamp__Dataset__Generator.html',1,'SAD::Stream_Generator']]]
 ];

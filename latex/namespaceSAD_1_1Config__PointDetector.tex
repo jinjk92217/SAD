@@ -6,6 +6,8 @@
 def \hyperlink{namespaceSAD_1_1Config__PointDetector_a4a47fd76139083b7d9f41d3997edf3f0}{pyisc\+\_\+\+Point\+Detector} (train\+\_\+data=\mbox{[}$\,$\mbox{]}, models=\mbox{[}$\,$\mbox{]}, incremental=False, test\+\_\+distribution=\mbox{[}\textquotesingle{}norm\textquotesingle{}\mbox{]})
 \item 
 def \hyperlink{namespaceSAD_1_1Config__PointDetector_a420441441318e4c5c12031e2e19dce98}{lof\+\_\+\+Point\+Detector} (train\+\_\+data=\mbox{[}$\,$\mbox{]}, n\+\_\+neighbors=10, algorithm=\textquotesingle{}auto\textquotesingle{})
+\item 
+def \hyperlink{namespaceSAD_1_1Config__PointDetector_a582467493e610c8f0ff0426f8a9172fe}{S\+V\+M\+\_\+\+Point\+Detector} (train\+\_\+data=\mbox{[}$\,$\mbox{]}, nu=0.\+1, kernel=\char`\"{}rbf\char`\"{}, gamma=0.\+1, coefficient=1.\+5)
 \end{DoxyCompactItemize}
 
 
@@ -47,6 +49,22 @@ e.g. [pyisc.P_Gaussian(1),pyisc.P_Gaussian(2),pyisc.P_Poisson(3,0),pyisc.P_Poiss
 :param incremental: Whether they are training incremental or not
 :param test_distribution: If there is training phase, the test_distribution is the list used for testing the best distribution
 e.g.['norm']
+:return:
+\end{DoxyVerb}
+ \index{S\+A\+D\+::\+Config\+\_\+\+Point\+Detector@{S\+A\+D\+::\+Config\+\_\+\+Point\+Detector}!S\+V\+M\+\_\+\+Point\+Detector@{S\+V\+M\+\_\+\+Point\+Detector}}
+\index{S\+V\+M\+\_\+\+Point\+Detector@{S\+V\+M\+\_\+\+Point\+Detector}!S\+A\+D\+::\+Config\+\_\+\+Point\+Detector@{S\+A\+D\+::\+Config\+\_\+\+Point\+Detector}}
+\subsubsection[{\texorpdfstring{S\+V\+M\+\_\+\+Point\+Detector(train\+\_\+data=[], nu=0.\+1, kernel=""rbf"", gamma=0.\+1, coefficient=1.\+5)}{SVM_PointDetector(train_data=[], nu=0.1, kernel="rbf", gamma=0.1, coefficient=1.5)}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Config\+\_\+\+Point\+Detector.\+S\+V\+M\+\_\+\+Point\+Detector (
+\begin{DoxyParamCaption}
+\item[{}]{train\+\_\+data = {\ttfamily \mbox{[}\mbox{]}}, }
+\item[{}]{nu = {\ttfamily 0.1}, }
+\item[{}]{kernel = {\ttfamily \char`\"{}rbf\char`\"{}}, }
+\item[{}]{gamma = {\ttfamily 0.1}, }
+\item[{}]{coefficient = {\ttfamily 1.5}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceSAD_1_1Config__PointDetector_a582467493e610c8f0ff0426f8a9172fe}{}\label{namespaceSAD_1_1Config__PointDetector_a582467493e610c8f0ff0426f8a9172fe}
+\begin{DoxyVerb}:param train_data:
+:param n_neighbors:
+:param algorithm:
 :return:
 \end{DoxyVerb}
  

@@ -3,9 +3,13 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{namespaceSAD_1_1Config__StreamDetector_a833140ad9e4c0fb8a57ca3f3028c579e}{D\+D\+M\+\_\+\+Stream\+Detector} (threshold=1)
+def \hyperlink{namespaceSAD_1_1Config__StreamDetector_a8fe66fa1ba56758d362751b650b527c9}{D\+D\+M\+\_\+\+Stream\+Detector} (threshold=1, alpha=2.\+0, beta=3.\+0)
 \item 
 def \hyperlink{namespaceSAD_1_1Config__StreamDetector_a9b6e5608d3fa1ec9d349f060c106fe37}{C\+U\+S\+U\+M\+\_\+\+Stream\+Detector} (drift=1, threshold=1)
+\item 
+def \hyperlink{namespaceSAD_1_1Config__StreamDetector_ac6e6604df8a55cae85d05d26ffb65ae3}{F\+C\+W\+M\+\_\+\+Stream\+Detector} (number\+\_\+bin=100, ref\+\_\+size=10000, rec\+\_\+size=1000, maxn=20.\+0, update\+\_\+able=1, Lambda=1.\+0)
+\item 
+def \hyperlink{namespaceSAD_1_1Config__StreamDetector_a883b97a1c93b25432bae9e26bf93aad9}{P\+R\+A\+A\+G\+\_\+\+Stream\+Detector} (r=100, l=1000, e=0.\+0001, a=15, k=0.\+05)
 \end{DoxyCompactItemize}
 
 
@@ -32,13 +36,49 @@ e.g. 10.0
 :return:\end{DoxyVerb}
  \index{S\+A\+D\+::\+Config\+\_\+\+Stream\+Detector@{S\+A\+D\+::\+Config\+\_\+\+Stream\+Detector}!D\+D\+M\+\_\+\+Stream\+Detector@{D\+D\+M\+\_\+\+Stream\+Detector}}
 \index{D\+D\+M\+\_\+\+Stream\+Detector@{D\+D\+M\+\_\+\+Stream\+Detector}!S\+A\+D\+::\+Config\+\_\+\+Stream\+Detector@{S\+A\+D\+::\+Config\+\_\+\+Stream\+Detector}}
-\subsubsection[{\texorpdfstring{D\+D\+M\+\_\+\+Stream\+Detector(threshold=1)}{DDM_StreamDetector(threshold=1)}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Config\+\_\+\+Stream\+Detector.\+D\+D\+M\+\_\+\+Stream\+Detector (
+\subsubsection[{\texorpdfstring{D\+D\+M\+\_\+\+Stream\+Detector(threshold=1, alpha=2.\+0, beta=3.\+0)}{DDM_StreamDetector(threshold=1, alpha=2.0, beta=3.0)}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Config\+\_\+\+Stream\+Detector.\+D\+D\+M\+\_\+\+Stream\+Detector (
 \begin{DoxyParamCaption}
-\item[{}]{threshold = {\ttfamily 1}}
+\item[{}]{threshold = {\ttfamily 1}, }
+\item[{}]{alpha = {\ttfamily 2.0}, }
+\item[{}]{beta = {\ttfamily 3.0}}
 \end{DoxyParamCaption}
-)}\hypertarget{namespaceSAD_1_1Config__StreamDetector_a833140ad9e4c0fb8a57ca3f3028c579e}{}\label{namespaceSAD_1_1Config__StreamDetector_a833140ad9e4c0fb8a57ca3f3028c579e}
+)}\hypertarget{namespaceSAD_1_1Config__StreamDetector_a8fe66fa1ba56758d362751b650b527c9}{}\label{namespaceSAD_1_1Config__StreamDetector_a8fe66fa1ba56758d362751b650b527c9}
 \begin{DoxyVerb}:param threshold: When the score exceeds the threshold then the prob of anomalous increases
 e.g. 3.0
 :return:
 \end{DoxyVerb}
+ \index{S\+A\+D\+::\+Config\+\_\+\+Stream\+Detector@{S\+A\+D\+::\+Config\+\_\+\+Stream\+Detector}!F\+C\+W\+M\+\_\+\+Stream\+Detector@{F\+C\+W\+M\+\_\+\+Stream\+Detector}}
+\index{F\+C\+W\+M\+\_\+\+Stream\+Detector@{F\+C\+W\+M\+\_\+\+Stream\+Detector}!S\+A\+D\+::\+Config\+\_\+\+Stream\+Detector@{S\+A\+D\+::\+Config\+\_\+\+Stream\+Detector}}
+\subsubsection[{\texorpdfstring{F\+C\+W\+M\+\_\+\+Stream\+Detector(number\+\_\+bin=100, ref\+\_\+size=10000, rec\+\_\+size=1000, maxn=20.\+0, update\+\_\+able=1, Lambda=1.\+0)}{FCWM_StreamDetector(number_bin=100, ref_size=10000, rec_size=1000, maxn=20.0, update_able=1, Lambda=1.0)}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Config\+\_\+\+Stream\+Detector.\+F\+C\+W\+M\+\_\+\+Stream\+Detector (
+\begin{DoxyParamCaption}
+\item[{}]{number\+\_\+bin = {\ttfamily 100}, }
+\item[{}]{ref\+\_\+size = {\ttfamily 10000}, }
+\item[{}]{rec\+\_\+size = {\ttfamily 1000}, }
+\item[{}]{maxn = {\ttfamily 20.0}, }
+\item[{}]{update\+\_\+able = {\ttfamily 1}, }
+\item[{}]{Lambda = {\ttfamily 1.0}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceSAD_1_1Config__StreamDetector_ac6e6604df8a55cae85d05d26ffb65ae3}{}\label{namespaceSAD_1_1Config__StreamDetector_ac6e6604df8a55cae85d05d26ffb65ae3}
+\begin{DoxyVerb}:param drift: The drift of the score that could be detected
+e.g. 1.0
+:param threshold: the threshold that during some period the positive and negative changes exceeds the threshold
+e.g. 10.0
+:return:\end{DoxyVerb}
+ \index{S\+A\+D\+::\+Config\+\_\+\+Stream\+Detector@{S\+A\+D\+::\+Config\+\_\+\+Stream\+Detector}!P\+R\+A\+A\+G\+\_\+\+Stream\+Detector@{P\+R\+A\+A\+G\+\_\+\+Stream\+Detector}}
+\index{P\+R\+A\+A\+G\+\_\+\+Stream\+Detector@{P\+R\+A\+A\+G\+\_\+\+Stream\+Detector}!S\+A\+D\+::\+Config\+\_\+\+Stream\+Detector@{S\+A\+D\+::\+Config\+\_\+\+Stream\+Detector}}
+\subsubsection[{\texorpdfstring{P\+R\+A\+A\+G\+\_\+\+Stream\+Detector(r=100, l=1000, e=0.\+0001, a=15, k=0.\+05)}{PRAAG_StreamDetector(r=100, l=1000, e=0.0001, a=15, k=0.05)}}]{\setlength{\rightskip}{0pt plus 5cm}def S\+A\+D.\+Config\+\_\+\+Stream\+Detector.\+P\+R\+A\+A\+G\+\_\+\+Stream\+Detector (
+\begin{DoxyParamCaption}
+\item[{}]{r = {\ttfamily 100}, }
+\item[{}]{l = {\ttfamily 1000}, }
+\item[{}]{e = {\ttfamily 0.0001}, }
+\item[{}]{a = {\ttfamily 15}, }
+\item[{}]{k = {\ttfamily 0.05}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceSAD_1_1Config__StreamDetector_a883b97a1c93b25432bae9e26bf93aad9}{}\label{namespaceSAD_1_1Config__StreamDetector_a883b97a1c93b25432bae9e26bf93aad9}
+\begin{DoxyVerb}:param r: Size of recent window(small one)
+:param l: Size of reference window(large one)
+:param e: precision, needed only if using GK quantile estimation
+:param a: thresthold of negative log probability value
+:param k: thresthold percentage of considering a window abnormal
+:return:\end{DoxyVerb}
  

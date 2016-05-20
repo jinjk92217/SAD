@@ -103,12 +103,21 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a0625a68680fe476e3a38c55669ec49ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0625a68680fe476e3a38c55669ec49ca"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Myseed</b></td></tr>
+<tr class="separator:a0625a68680fe476e3a38c55669ec49ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a194be1cda3175225c22109dba23a4142"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a194be1cda3175225c22109dba23a4142"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>Plot_ylim</b> = 20</td></tr>
 <tr class="separator:a194be1cda3175225c22109dba23a4142"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98ae0dd0686308bdb555c8867a9c347d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98ae0dd0686308bdb555c8867a9c347d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>Train_incremental</b> = False</td></tr>
 <tr class="separator:a98ae0dd0686308bdb555c8867a9c347d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335e93ce2f9a4ade5ee88c597af6c7a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a335e93ce2f9a4ade5ee88c597af6c7a9"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>Stream_Train_incremental</b> = True</td></tr>
+<tr class="separator:a335e93ce2f9a4ade5ee88c597af6c7a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1a2a4c51008325c8d35a1c46d03b99a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab1a2a4c51008325c8d35a1c46d03b99a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>Stream_Train_number</b> = 10000</td></tr>
+<tr class="separator:ab1a2a4c51008325c8d35a1c46d03b99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5456dbfce839159d79b2e884585405d2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5456dbfce839159d79b2e884585405d2"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>Error_rate</b> = 0.1</td></tr>
 <tr class="separator:a5456dbfce839159d79b2e884585405d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -297,7 +306,7 @@ There will be around Error_rate percentage error occurs
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceSAD_1_1Main.html">    1</a></span>&#160;= Config_StreamDetector.CUSUM_StreamDetector(</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="comment">#filename = &quot;./Stream_AnomalyDetector/C++/CUSUM.so&quot;,</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    drift = 1.0,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    threshold = 12.0</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;)</div></div><!-- fragment -->
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="namespaceSAD_1_1Main.html">    1</a></span>&#160;= Config_StreamDetector.FCWM_StreamDetector(</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="comment">#filename = &quot;./Stream_AnomalyDetector/C++/CUSUM.so&quot;,</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    number_bin = 200,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    ref_size=10000,</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    rec_size=200,</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    maxn=20.0,</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    update_able=<span class="keyword">False</span>,</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    Lambda=2.0</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;)</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
