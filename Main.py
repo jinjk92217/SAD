@@ -218,9 +218,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
                 print "Current accuracy",MisDetect_error,Detected_error,Total_error,Total_number
                 #print "Current accuracy",MisDetect_error,Detected_error,Total_error,Total_number,current_time,Total_number/current_time
 
-            if Total_error > 0:
-                radio_Detect_error = 1.0 * Detected_error / Total_error
-                radio_MisDetect_error = 1.0 * MisDetect_error / Total_error
+
 
             Series_array[Total_number%Plot_Window_Size] = Total_number
             Score_array[Total_number%Plot_Window_Size] = score
@@ -228,12 +226,18 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             if Total_number%Plot_Window_Size == Plot_Window_Size-1:
                 try:
                     current_time = time.time() - start_time
+                    if Total_error > 0:
+                        radio_Detect_error = 1.0 * Detected_error / Total_error
+                        radio_MisDetect_error = 1.0 * MisDetect_error / Total_error
                     write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_average_number,radio_MisDetect_error,radio_Detect_error])
                 except Exception as e:
                     print e
             time.sleep(0.0001)
     try:
         current_time = time.time() - start_time
+        if Total_error > 0:
+            radio_Detect_error = 1.0 * Detected_error / Total_error
+            radio_MisDetect_error = 1.0 * MisDetect_error / Total_error
         write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_average_number,radio_MisDetect_error,radio_Detect_error],size=Total_number%Plot_Window_Size)
     except Exception as e:
         print e
