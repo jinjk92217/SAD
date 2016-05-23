@@ -26,7 +26,7 @@ Train_incremental = False      # whether train the data incrementally for point 
 Stream_Train_incremental = True  #Whether train the data incrementally for stream anomaly detector, only when Point anomaly detector being true works
 Stream_Train_number = 10000  # if training stream is true, then the number is the training stream number
 Error_rate = 0.01            #error rate happened
-Mean_number = 200           #the mean number of cases happened during one shift
+Mean_number = 2000           #the mean number of cases happened during one shift
 Shift_times = 1000          #the total time of changes between normal and anomaly cases
 
 
@@ -200,15 +200,26 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             Delay_time_tmp = time.time()
         for i in xrange(number):
             #tag: return A
-            time.sleep(0.0002)
+            # time.sleep(0.0002)
             Total_number = Total_number + 1
             if (if_error ==True and flag ==0):
                 # print "start error!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   size    ",number
                 flag = 1
                 Total_error = Total_error + 1
+
+            # # tag: 0502
+            if if_error == False:
+                score = random.normalvariate(2, 2) 
+            else:
+                # err_count += 1;
+                # gradual change of scores
+                # score = random.normalvariate(2+err_count/25, 5)     
+                ## abrupt change of scores
+                score = random.normalvariate(10, 2) 
+
             #total_number = total_number + 1
             tmp =stream_array[i,:]
-            score = anomaly_detector.anomaly_score(tmp)[0]
+            # score = anomaly_detector.anomaly_score(tmp)[0]
             #print "score",if_error,score
             if Train_incremental == True:
                 anomaly_detector.fit_incrementally(tmp)
