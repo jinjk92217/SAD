@@ -23,7 +23,7 @@ Plot_ylim =20              #ylim of the plot
 Train_incremental = False      # whether train the data incrementally for point anomaly detector
 Stream_Train_incremental = True  #Whether train the data incrementally for stream anomaly detector, only when Point anomaly detector being true works
 Stream_Train_number = 10000  # if training stream is true, then the number is the training stream number
-Error_rate = 0.1            #error rate happened
+Error_rate = 0.3            #error rate happened
 Mean_number = 200           #the mean number of cases happened during one shift
 Shift_times = 1000          #the total time of changes between normal and anomaly cases
 
@@ -35,24 +35,24 @@ Detected_array = [0] * Plot_Window_Size
 
 
 
-Gen,train_data=Config_Generator.Generate_from_simulation(
-    Normal_Error = [0,poisson(1.0),poisson(1.0),poisson(1.0),poisson(1.0)],
-    Anomaly_Error = [0,poisson(1.0),poisson(1.0),poisson(10.0),poisson(1.0)],
-    list_distribution = [1,norm(5,12),norm(10,20),poisson(10),poisson(100)],
-    type_error = "Sudden",
-    incremental=Train_incremental,
-    Number_Of_Train = 10000
-)
-
-# Gen,train_data = Config_Generator.Generate_from_dataset(
-#     filename = "./Data/abalone.data",
-#     delimiter = ",",
-#     normal_class = 'M',
-#     column = 0,
+# Gen,train_data=Config_Generator.Generate_from_simulation(
+#     Normal_Error = [0,poisson(1.0),poisson(1.0),poisson(1.0),poisson(1.0)],
+#     Anomaly_Error = [0,poisson(1.0),poisson(1.0),poisson(10.0),poisson(1.0)],
+#     list_distribution = [1,norm(5,12),norm(10,20),poisson(10),poisson(100)],
 #     type_error = "Sudden",
-#     incremental= Train_incremental,
-#     percentage = 0.7
+#     incremental=Train_incremental,
+#     Number_Of_Train = 10000
 # )
+
+Gen,train_data = Config_Generator.Generate_from_dataset(
+    filename = "./Data/abalone.data",
+    delimiter = ",",
+    normal_class = 'M',
+    column = 0,
+    type_error = "Sudden",
+    incremental= Train_incremental,
+    percentage = 0.7
+)
 anomaly_detector = Config_PointDetector.pyisc_PointDetector(
     train_data= train_data,
     #models = [],
@@ -71,12 +71,20 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 
 # anomaly_detector = Config_PointDetector.SVM_PointDetector(
 #     train_data=train_data,
+#     nu = 0.05,
+#     kernel = "rbf",#"poly", "rbf", "sigmoid"
+#     gamma = 0.05,
+#     coefficient = 0.05#1.0
+# )
+
+# anomaly_detector = Config_PointDetector.SVM_PointDetector(
+#     train_data=train_data,
 #     nu = 0.1,
 #     kernel = "poly",#"poly", "rbf", "sigmoid"
 #     gamma = 0.1,
 #     coefficient = 0.1#1.0
 # )
-#
+# #
 Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
     threshold = 4.0,#15.0
@@ -90,7 +98,7 @@ Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
 #     threshold = 12.0
 # )
 
-# #
+#
 # Stream_Detector = Config_StreamDetector.FCWM_StreamDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
 #     number_bin = 200,
@@ -137,6 +145,7 @@ def write_to_file(Info,size=Plot_Window_Size):
 
     datafile_id.close()
     #close the file
+    return infostr
 
 
 
@@ -211,32 +220,33 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
                     Delay_number = Delay_number + i
                     Delay_time = Delay_time + 1
                     Delay_average_number = 1.0 * Delay_number / Delay_time
-
+                    if Total_error > 0:
+                        radio_Detect_error = 1.0 * Detected_error / Total_error
+                        radio_MisDetect_error = 1.0 * MisDetect_error / Total_error
                 elif if_error != True:
                     MisDetect_error = MisDetect_error + 1
+                    if Total_error > 0:
+                        radio_MisDetect_error = 1.0 * MisDetect_error / Total_error
                 #current_time = time.time() - start_time
                 print "Current accuracy",MisDetect_error,Detected_error,Total_error,Total_number
                 #print "Current accuracy",MisDetect_error,Detected_error,Total_error,Total_number,current_time,Total_number/current_time
-
-            if Total_error > 0:
-                radio_Detect_error = 1.0 * Detected_error / Total_error
-                radio_MisDetect_error = 1.0 * MisDetect_error / Total_error
-
             Series_array[Total_number%Plot_Window_Size] = Total_number
             Score_array[Total_number%Plot_Window_Size] = score
             Detected_array[Total_number%Plot_Window_Size] = anomaly_flag
             if Total_number%Plot_Window_Size == Plot_Window_Size-1:
                 try:
                     current_time = time.time() - start_time
-                    write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_average_number,radio_MisDetect_error,radio_Detect_error])
+                    #write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_average_number,radio_MisDetect_error,radio_Detect_error])
                 except Exception as e:
                     print e
             time.sleep(0.0001)
+    str1 = ""
     try:
         current_time = time.time() - start_time
-        write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_average_number,radio_MisDetect_error,radio_Detect_error],size=Total_number%Plot_Window_Size)
+        str1 = write_to_file([MisDetect_error,Detected_error,Total_error,Total_number/current_time,Delay_average_number,radio_MisDetect_error,radio_Detect_error],size=Total_number%Plot_Window_Size)
     except Exception as e:
         print e
+    return str1
 
 def runplot(pid,Plot_ylim = Plot_ylim):
     '''
@@ -252,11 +262,17 @@ def runplot(pid,Plot_ylim = Plot_ylim):
     #Plot_process.pl()
 
 if __name__ == '__main__':
-    process1 = multiprocessing.Process(target=test_process, args=[])
-    process1.start()
-    time.sleep(0.5)
-    process2 = multiprocessing.Process(target=runplot,args=[process1.pid])
-    process2.start()
+    prob = [0.01,0.02,0.05,0.1,0.15,0.2,0.25,0.3]
+    #prob = [0.1]
+    results  = ""
+    for x in prob:
+        results+= test_process(Error_rate= x)+"\n"
+    print results
+    #process1 = multiprocessing.Process(target=test_process, args=[])
+    #process1.start()
+    #time.sleep(0.5)
+    #process2 = multiprocessing.Process(target=runplot,args=[process1.pid])
+    #process2.start()
     '''
     time.sleep(5)
     p = psutil.Process(process1.pid)
