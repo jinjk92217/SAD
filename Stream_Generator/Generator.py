@@ -67,6 +67,14 @@ class Generator(object):
         :return:
         '''
         pass
+    def _Generate_error_incremental(self):
+        '''
+        This is the super interface for generating incremental error stream
+        Only for simulation and dataset generator
+        :param
+        :return:
+        '''
+        pass
     '''
     def _UpdateSeed(self):
         random.seed(self.Myseed)

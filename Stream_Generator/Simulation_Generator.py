@@ -72,6 +72,8 @@ class Simulation_Generator(Generator):
                 return self._Generate_StreamData(number)+ self._Generate_error_gradual(number,self.normal_error_distribution)
             elif self.type_error =="Outlier":
                 return self._Generate_StreamData(number)+ self._Generate_error_outlier(number,self.normal_error_distribution)
+            elif self.type_error =="Incremental":
+                return self._Generate_StreamData(number)+ self._Generate_error_incremental(number,self.normal_error_distribution)
             return self._Generate_StreamData(number)+ self._Generate_error_sudden(number,self.normal_error_distribution)
         #print "type_error",self.type_error
         elif self.type_error == "Sudden":
@@ -79,7 +81,9 @@ class Simulation_Generator(Generator):
         elif self.type_error == "Gradual":
             return self._Generate_StreamData(number)+ self._Generate_error_gradual(number,self.anomaly_error_distribution)
         elif self.type_error == "Outlier":
-            return self._Generate_StreamData(10)+ self._Generate_error_outlier(10,self.anomaly_error_distribution)
+            return self._Generate_StreamData(50)+ self._Generate_error_outlier(50,self.anomaly_error_distribution)
+        elif self.type_error == "Incremental":
+            return self._Generate_StreamData(number)+ self._Generate_error_incremental(number,self.anomaly_error_distribution)
 
     def _generate_matrix(self,list_dist,number):
         '''
@@ -115,6 +119,22 @@ class Simulation_Generator(Generator):
         return np.column_stack(
                        self._generate_matrix(distribution,number)
         )
+
+    def _Generate_error_incremental(self,number,distribution):
+        '''
+
+        :param list_dist: generate the stream cases
+        :param number: the number of the stream cases
+        :return: matrix
+        '''
+        Generator._Generate_error_incremental(self)
+        stream = 1.0  / 3 *np.column_stack(
+                       self._generate_matrix(distribution,number / 3))
+        for i in range(2,3):
+            stream = np.row_stack((stream, 1.0 * i / 3 *np.column_stack(
+                       self._generate_matrix(distribution,number / 3))))
+        stream = np.row_stack((stream, np.column_stack(self._generate_matrix(distribution,number - number / 3 * 2))))
+        return stream
 
 
     def _Generate_error_outlier(self,number,distribution):

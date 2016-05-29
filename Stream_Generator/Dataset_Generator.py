@@ -68,6 +68,8 @@ class Dataset_Generator(Generator):
             return self._Generate_error_outlier(10)
         elif self.type_error == "Gradual":
             return self._Generate_error_gradual(number)
+        elif self.type_error == "Incremental":
+            return self._Generate_error_incremental(number)
         #return self.Anormal_data_set[random.randint(0,len(self.Anormal_data_set)-1)]
 
 
@@ -121,7 +123,15 @@ class Dataset_Generator(Generator):
         #self._UpdateSeed()
         return np.hstack([self.ran.sample(self.Anormal_data_set,number>len(self.test) and len(self.test) or number)])
 
+    def _Generate_error_incremental(self,number):
+        '''
 
+        :param list_dist: generate the stream cases
+        :param number: the number of the stream cases
+        :return: matrix
+        '''
+        Generator._Generate_error_incremental(self)
+        return self._Generate_error_gradual(number)
 
     def _Generate_error_outlier(self,number):
         '''

@@ -35,24 +35,24 @@ Detected_array = [0] * Plot_Window_Size
 
 
 
-# Gen,train_data=Config_Generator.Generate_from_simulation(
-#     Normal_Error = [0,poisson(1.0),poisson(1.0),poisson(1.0),poisson(1.0)],
-#     Anomaly_Error = [0,poisson(1.0),poisson(1.0),poisson(10.0),poisson(1.0)],
-#     list_distribution = [1,norm(5,12),norm(10,20),poisson(10),poisson(100)],
-#     type_error = "Sudden",
-#     incremental=Train_incremental,
-#     Number_Of_Train = 10000
-# )
-
-Gen,train_data = Config_Generator.Generate_from_dataset(
-    filename = "./Data/abalone.data",
-    delimiter = ",",
-    normal_class = 'M',
-    column = 0,
+Gen,train_data=Config_Generator.Generate_from_simulation(
+    Normal_Error = [0,poisson(1.0),poisson(1.0),poisson(1.0),poisson(1.0)],
+    Anomaly_Error = [0,poisson(1.0),poisson(1.0),poisson(10.0),poisson(1.0)],
+    list_distribution = [1,norm(5,12),norm(10,20),poisson(10),poisson(100)],
     type_error = "Sudden",
-    incremental= Train_incremental,
-    percentage = 0.7
+    incremental=Train_incremental,
+    Number_Of_Train = 10000
 )
+
+# Gen,train_data = Config_Generator.Generate_from_dataset(
+#     filename = "./Data/abalone.data",
+#     delimiter = ",",
+#     normal_class = 'M',
+#     column = 0,
+#     type_error = "Sudden",
+#     incremental= Train_incremental,
+#     percentage = 0.7
+# )
 anomaly_detector = Config_PointDetector.pyisc_PointDetector(
     train_data= train_data,
     #models = [],
@@ -95,10 +95,10 @@ Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
 # Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
 #     drift = 1.0,
-#     threshold = 12.0
+#     threshold = 10.0
 # )
 
-#
+
 # Stream_Detector = Config_StreamDetector.FCWM_StreamDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
 #     number_bin = 200,
@@ -170,6 +170,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
     Delay_number = 0
     Delay_time = 0
     Delay_average_number = 0
+    use_previous = False
     global Plot_Window_Size,Series_array,Score_array,Detected_array
     global Gen,train_data,anomaly_detector,Stream_Detector
     stream_array = []
@@ -183,11 +184,19 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
             number = Stream_Train_number
             if_error = False
             Shift_times = Shift_times + 1
+        elif use_previous ==True:
+            if_error = True
+            use_previous = False
         else:
             if random.uniform(0.0, 1.0)>Error_rate:
                 if_error = False
             else:
-                if_error = True
+                if if_error ==True:
+                    if_error = False
+                    use_previous = True
+                else:
+                    if_error = True
+                    use_previous = False
             number = poisson(Mean_number).rvs(1)[0]
         Detect_flag = 0
         flag = 0

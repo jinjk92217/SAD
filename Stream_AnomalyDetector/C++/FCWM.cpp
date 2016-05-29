@@ -108,9 +108,9 @@ extern "C" {
             get_recent();
             put_recent(xi);
         }
-        if(count_alarm < 2 * recent_window_size)
+        if(count_alarm < 1.5 * recent_window_size)
             count_alarm += 1;
-        if(reference_number<reference_window_size || recent_number< recent_window_size || count_alarm < 2 * recent_window_size)
+        if(reference_number<reference_window_size || recent_number< recent_window_size || count_alarm < 1.5 * recent_window_size)
             return 0;
 //        compute_KLD();
         if(fabs(fabs(KLDAB) - fabs(KLDBA))> threshold)

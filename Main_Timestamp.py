@@ -61,12 +61,12 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 
 
 #
-Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
-    #filename = "./Stream_AnomalyDetector/C++/DDM.so",
-    threshold = 3.0,
-    alpha= 2.0,
-    beta= 3.0
-)
+# Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
+#     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
+#     threshold = 3.0,
+#     alpha= 2.0,
+#     beta= 3.0
+# )
 #
 # Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
@@ -78,15 +78,15 @@ Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
 #     # threshold = 0.6
 # )
 
-# Stream_Detector = Config_StreamDetector.FCWM_StreamDetector(
-#     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
-#     number_bin = 50,
-#     ref_size=100,
-#     rec_size=20,
-#     maxn=10.0,
-#     update_able=False,
-#     Lambda=1
-# )
+Stream_Detector = Config_StreamDetector.FCWM_StreamDetector(
+    #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
+    number_bin = 50,
+    ref_size=100,
+    rec_size=20,
+    maxn=10.0,
+    update_able=False,
+    Lambda=1
+)
 
 def write_to_file(Info,size=Plot_Window_Size):
     '''
