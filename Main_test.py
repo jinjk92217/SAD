@@ -35,38 +35,38 @@ Detected_array = [0] * Plot_Window_Size
 
 
 
-Gen,train_data=Config_Generator.Generate_from_simulation(
-    Normal_Error = [0,poisson(1.0),poisson(1.0),poisson(1.0),poisson(1.0)],
-    Anomaly_Error = [0,poisson(1.0),poisson(1.0),poisson(10.0),poisson(1.0)],
-    list_distribution = [1,norm(5,12),norm(10,20),poisson(10),poisson(100)],
-    type_error = "Sudden",
-    incremental=Train_incremental,
-    Number_Of_Train = 10000
-)
-
-# Gen,train_data = Config_Generator.Generate_from_dataset(
-#     filename = "./Data/abalone.data",
-#     delimiter = ",",
-#     normal_class = 'M',
-#     column = 0,
+# Gen,train_data=Config_Generator.Generate_from_simulation(
+#     Normal_Error = [0,poisson(1.0),poisson(1.0),poisson(1.0),poisson(1.0)],
+#     Anomaly_Error = [0,poisson(1.0),poisson(1.0),poisson(10.0),poisson(1.0)],
+#     list_distribution = [1,norm(5,12),norm(10,20),poisson(10),poisson(100)],
 #     type_error = "Sudden",
-#     incremental= Train_incremental,
-#     percentage = 0.7
+#     incremental=Train_incremental,
+#     Number_Of_Train = 1000
 # )
-anomaly_detector = Config_PointDetector.pyisc_PointDetector(
-    train_data= train_data,
-    #models = [],
-    models=[pyisc.P_Gaussian(1),pyisc.P_Gaussian(2),pyisc.P_Poisson(3,0),pyisc.P_Poisson(4,0)],
-    # models=[pyisc.P_Gaussian([0,1,2,3])],
-    incremental= Train_incremental,
-    # test_distribution=['norm']
-)
 
-# anomaly_detector = Config_PointDetector.lof_PointDetector(
-#     train_data=train_data,
-#     n_neighbors = 10,
-#     algorithm = 'auto'
+Gen,train_data = Config_Generator.Generate_from_dataset(
+    filename = "./Data/abalone.data",
+    delimiter = ",",
+    normal_class = 'M',
+    column = 0,
+    type_error = "Sudden",
+    incremental= Train_incremental,
+    percentage = 0.7
+)
+# anomaly_detector = Config_PointDetector.pyisc_PointDetector(
+#     train_data= train_data,
+#     #models = [],
+#     models=[pyisc.P_Gaussian(1),pyisc.P_Gaussian(2),pyisc.P_Poisson(3,0),pyisc.P_Poisson(4,0)],
+#     # models=[pyisc.P_Gaussian([0,1,2,3])],
+#     incremental= Train_incremental,
+#     # test_distribution=['norm']
 # )
+
+anomaly_detector = Config_PointDetector.lof_PointDetector(
+    train_data=train_data,
+    n_neighbors = 10,
+    algorithm = 'auto'
+)
 
 
 # anomaly_detector = Config_PointDetector.SVM_PointDetector(
@@ -87,7 +87,7 @@ anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 # #
 Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
-    threshold = 4.0,#15.0
+    threshold = 1.1,#15.0
     alpha= 2.0,
     beta= 3.0
 )
@@ -190,6 +190,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
         else:
             if random.uniform(0.0, 1.0)>Error_rate:
                 if_error = False
+                use_previous = False
             else:
                 if if_error ==True:
                     if_error = False

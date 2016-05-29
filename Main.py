@@ -181,6 +181,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
         else:
             if random.uniform(0.0, 1.0)>Error_rate:
                 if_error = False
+                use_previous = False
             else:
                 if if_error ==True:
                     if_error = False
