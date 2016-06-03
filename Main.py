@@ -39,7 +39,7 @@ Gen,train_data=Config_Generator.Generate_from_simulation(
     Normal_Error = [0,poisson(1.0),poisson(1.0),poisson(1.0),poisson(1.0)],
     Anomaly_Error = [0,poisson(1.0),poisson(1.0),poisson(10.0),poisson(1.0)],
     list_distribution = [1,norm(5,12),norm(10,20),poisson(10),poisson(100)],
-    type_error = "Incremental",
+    type_error = "Sudden",
     incremental=Train_incremental,
     Number_Of_Train = 10000
 )

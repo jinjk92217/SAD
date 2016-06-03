@@ -43,16 +43,16 @@ Detected_array = [0] * Plot_Window_Size
 #     incremental=Train_incremental,
 #     Number_Of_Train = 1000
 # )
-
-Gen,train_data = Config_Generator.Generate_from_dataset(
-    filename = "./Data/abalone.data",
-    delimiter = ",",
-    normal_class = 'M',
-    column = 0,
-    type_error = "Sudden",
-    incremental= Train_incremental,
-    percentage = 0.7
-)
+#
+# Gen,train_data = Config_Generator.Generate_from_dataset(
+#     filename = "./Data/abalone.data",
+#     delimiter = ",",
+#     normal_class = 'M',
+#     column = 0,
+#     type_error = "Sudden",
+#     incremental= Train_incremental,
+#     percentage = 0.7
+# )
 # anomaly_detector = Config_PointDetector.pyisc_PointDetector(
 #     train_data= train_data,
 #     #models = [],
@@ -62,11 +62,11 @@ Gen,train_data = Config_Generator.Generate_from_dataset(
 #     # test_distribution=['norm']
 # )
 
-anomaly_detector = Config_PointDetector.lof_PointDetector(
-    train_data=train_data,
-    n_neighbors = 10,
-    algorithm = 'auto'
-)
+# anomaly_detector = Config_PointDetector.lof_PointDetector(
+#     train_data=train_data,
+#     n_neighbors = 10,
+#     algorithm = 'auto'
+# )
 
 
 # anomaly_detector = Config_PointDetector.SVM_PointDetector(
@@ -85,12 +85,36 @@ anomaly_detector = Config_PointDetector.lof_PointDetector(
 #     coefficient = 0.1#1.0
 # )
 # #
-Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
-    #filename = "./Stream_AnomalyDetector/C++/DDM.so",
-    threshold = 1.1,#15.0
-    alpha= 2.0,
-    beta= 3.0
-)
+# Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
+#     #filename = "./Stream_AnomalyDetector/C++/DDM.so",
+#     threshold = 1.1,#15.0
+#     alpha= 2.0,
+#     beta= 3.0
+# )
+
+def init():
+    global Gen, anomaly_detector, Stream_Detector
+    Gen,train_data=Config_Generator.Generate_from_simulation(
+        Normal_Error = [0,poisson(1.0),poisson(1.0),poisson(1.0),poisson(1.0)],
+        Anomaly_Error = [0,poisson(1.0),poisson(1.0),poisson(10.0),poisson(1.0)],
+        list_distribution = [1,norm(5,12),norm(10,20),poisson(10),poisson(100)],
+        type_error = "Sudden",
+        incremental=Train_incremental,
+        Number_Of_Train = 10000
+    )
+    anomaly_detector = Config_PointDetector.pyisc_PointDetector(
+        train_data= train_data,
+        #models = [],
+        models=[pyisc.P_Gaussian(1),pyisc.P_Gaussian(2),pyisc.P_Poisson(3,0),pyisc.P_Poisson(4,0)],
+        # models=[pyisc.P_Gaussian([0,1,2,3])],
+        incremental= Train_incremental,
+        # test_distribution=['norm']
+    )
+    Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
+        #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
+        drift = 1.0,
+        threshold = 10.0
+    )
 
 # Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
@@ -274,6 +298,7 @@ if __name__ == '__main__':
     #prob = [0.1]
     results  = ""
     for x in prob:
+        init()
         results+= test_process(Error_rate= x)+"\n"
     print results
     #process1 = multiprocessing.Process(target=test_process, args=[])
