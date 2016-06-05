@@ -41,7 +41,7 @@ Detected_array = [0] * Plot_Window_Size
 #     list_distribution = [1,norm(5,12),norm(10,20),poisson(10),poisson(100)],
 #     type_error = "Sudden",
 #     incremental=Train_incremental,
-#     Number_Of_Train = 1000
+#     Number_Of_Train = 10000
 # )
 #
 # Gen,train_data = Config_Generator.Generate_from_dataset(
@@ -94,11 +94,20 @@ Detected_array = [0] * Plot_Window_Size
 
 def init():
     global Gen, anomaly_detector, Stream_Detector
+    # Gen,train_data = Config_Generator.Generate_from_dataset(
+    #     filename = "./Data/abalone.data",
+    #     delimiter = ",",
+    #     normal_class = 'M',
+    #     column = 0,
+    #     type_error = "Sudden",
+    #     incremental= Train_incremental,
+    #     percentage = 0.7
+    # )
     Gen,train_data=Config_Generator.Generate_from_simulation(
         Normal_Error = [0,poisson(1.0),poisson(1.0),poisson(1.0),poisson(1.0)],
         Anomaly_Error = [0,poisson(1.0),poisson(1.0),poisson(10.0),poisson(1.0)],
         list_distribution = [1,norm(5,12),norm(10,20),poisson(10),poisson(100)],
-        type_error = "Sudden",
+        type_error = "Gradual",
         incremental=Train_incremental,
         Number_Of_Train = 10000
     )
@@ -110,12 +119,43 @@ def init():
         incremental= Train_incremental,
         # test_distribution=['norm']
     )
-    Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
-        #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
-        drift = 1.0,
-        threshold = 10.0
+    # anomaly_detector = Config_PointDetector.SVM_PointDetector(
+    #     # train_data=train_data,
+    #     # nu = 0.1,
+    #     # kernel = "poly",#"poly", "rbf", "sigmoid"
+    #     # gamma = 0.1,
+    #     # coefficient = 0.1#1.0
+    #     train_data=train_data,
+    #     nu = 0.05,
+    #     kernel = "rbf",#"poly", "rbf", "sigmoid"
+    #     gamma = 0.05,
+    #     coefficient = 0.05#1.0
+    # )
+    # anomaly_detector = Config_PointDetector.lof_PointDetector(
+    #     train_data=train_data,
+    #     n_neighbors = 10,
+    #     algorithm = 'auto'
+    # )
+    # Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
+    #     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
+    #     drift = 0.1,
+    #     threshold = 13.5
+    # )
+    # Stream_Detector = Config_StreamDetector.FCWM_StreamDetector(
+    #     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
+    #     number_bin = 200,
+    #     ref_size=10000,
+    #     rec_size=200,
+    #     maxn=3.0,
+    #     update_able=False,
+    #     Lambda=2.0
+    # )
+    Stream_Detector = Config_StreamDetector.DDM_StreamDetector(
+        #filename = "./Stream_AnomalyDetector/C++/DDM.so",
+        threshold = 6.0,#15.0
+        alpha= 2.0,
+        beta= 3.0
     )
-
 # Stream_Detector = Config_StreamDetector.CUSUM_StreamDetector(
 #     #filename = "./Stream_AnomalyDetector/C++/CUSUM.so",
 #     drift = 1.0,
@@ -195,7 +235,7 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
     Delay_time = 0
     Delay_average_number = 0
     use_previous = False
-    global Plot_Window_Size,Series_array,Score_array,Detected_array
+    global Plot_Window_Size,Series_array,Score_array,Detected_array,Stream_Train_incremental
     global Gen,train_data,anomaly_detector,Stream_Detector
     stream_array = []
     if_error = 0
@@ -227,9 +267,13 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
         flag = 0
         anomaly_flag = 0
         if if_error == True:
-            stream_array=np.matrix(Gen.Generate_Stream("Anomaly",number))
+            stream_array = np.matrix(Gen.Generate_Stream("Anomaly",number))
+            while len(stream_array) < number:
+                stream_array=np.row_stack((stream_array,np.matrix(Gen.Generate_Stream("Anomaly",number-len(stream_array)))))
         else:
-            stream_array =np.matrix(Gen.Generate_Stream("Normal",number))
+            stream_array = np.matrix(Gen.Generate_Stream("Normal",number))
+            while len(stream_array) < number:
+                stream_array =np.row_stack((stream_array,np.matrix(Gen.Generate_Stream("Normal",number-len(stream_array)))))
         if len(stream_array)<number:
             number = len(stream_array)
         for i in xrange(number):

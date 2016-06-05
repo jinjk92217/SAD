@@ -4,6 +4,9 @@ extern "C" {
 	double pre_x = NUL, gp = 0.0, gn = 0.0, drift, threshold, s;
 	int first = 0;
 	void init(double _drift, double _threshold){
+	    pre_x = NUL;
+	    gp = 0.0;
+	    gn = 0.0;
 		drift = _drift;
 		threshold = _threshold;
 	}

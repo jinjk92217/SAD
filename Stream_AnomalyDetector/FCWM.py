@@ -20,7 +20,7 @@ class FCWM(Stream_Detector):
         self.Detector.Process.argtypes = [ctypes.c_double]
         self.Detector.init.argtypes = [ctypes.c_int, ctypes.c_int, ctypes.c_int, ctypes.c_double,ctypes.c_bool,ctypes.c_double]
         self.Detector.init(number_bin,ref_size,rec_size,maxn, update_able, Lambda)
-
+        self.maxn = maxn
 
     def check(self,score):
         '''
@@ -30,5 +30,5 @@ class FCWM(Stream_Detector):
         '''
         Stream_Detector.check(self)
         if score == float('inf'):
-            return self.Detector.Process(99999999)
+            return self.Detector.Process(self.maxn)
         return self.Detector.Process(score)

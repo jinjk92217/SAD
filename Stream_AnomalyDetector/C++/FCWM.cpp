@@ -16,12 +16,25 @@ extern "C" {
     double KLDAB = 0.0, KLDBA = 0.0 , threshold;
     int count_alarm = 0;
     void init(int number_bin,int ref_size, int rec_size,double maxn, bool update_able, double Lambda){
+           reference_front = 0;
+           reference_end = 0;
+           recent_front = 0;
+           recent_end = 0;
+           KLDAB = 0.0;
+           KLDBA = 0.0;
+           count_alarm = 0;
+           reference_number = 0;
+           recent_number = 0;
            nBin = number_bin;
            reference_window_size = ref_size;
            recent_window_size = rec_size;
            maxn_score = maxn;
            delta_score = 1.0 * maxn_score / nBin;
            if_update = update_able;
+//           delete reference_window;
+//           delete recent_window;
+//           delete reference_bins;
+//           delete recent_bins;
            reference_window = new double[reference_window_size];
            recent_window = new double[recent_window_size];
            reference_bins = new int[nBin];

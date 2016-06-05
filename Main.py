@@ -194,9 +194,13 @@ def test_process(Error_rate = Error_rate,Mean_number = Mean_number,Shift_times =
         flag = 0
         anomaly_flag = 0
         if if_error == True:
-            stream_array=np.matrix(Gen.Generate_Stream("Anomaly",number))
+            stream_array = np.matrix(Gen.Generate_Stream("Anomaly",number))
+            while len(stream_array) < number:
+                stream_array=np.row_stack((stream_array,np.matrix(Gen.Generate_Stream("Anomaly",number-len(stream_array)))))
         else:
-            stream_array =np.matrix(Gen.Generate_Stream("Normal",number))
+            stream_array = np.matrix(Gen.Generate_Stream("Normal",number))
+            while len(stream_array) < number:
+                stream_array =np.row_stack((stream_array,np.matrix(Gen.Generate_Stream("Normal",number-len(stream_array)))))
         if len(stream_array)<number:
             number = len(stream_array)
         for i in xrange(number):
